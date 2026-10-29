@@ -1,0 +1,191 @@
+[
+  {
+    "case_id": "boundary-01-numeric-tamper",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2403.18802::33242-33346)",
+      "tool_result:undefined@C001(arxiv:2403.18802::4423-4539)",
+      "tool_result:undefined@C001(arxiv:2403.18802::912-1080)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76195-76326)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8412-8431)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76327-76566)",
+      "tool_result:undefined@C001(arxiv:2403.18802::80151-80265)",
+      "tool_result:undefined@C001(arxiv:2403.18802::7370-7530)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> E_UNSUPPORTED_NUMERIC",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "boundary-02-strength-overclaim",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2403.18802::173319-173423)",
+      "tool_result:undefined@C001(arxiv:2403.18802::60874-61056)",
+      "tool_result:undefined@C001(arxiv:2403.18802::21189-21223)",
+      "tool_result:undefined@C001(arxiv:2403.18802::145973-146098)",
+      "tool_result:undefined@C001(arxiv:2403.18802::146947-147101)",
+      "tool_result:undefined@C001(arxiv:2403.18802::147749-147973)",
+      "tool_result:undefined@C001(arxiv:2403.18802::146156-146324)",
+      "tool_result:undefined@C001(arxiv:2403.18802::148174-148365)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> E_STRENGTH_OVERCLAIM",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "boundary-03-polarity-flip",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2403.18802::20973-21007)",
+      "tool_result:undefined@C001(arxiv:2403.18802::4263-4291)",
+      "tool_result:undefined@C001(arxiv:2310.00741::30343-30347)",
+      "tool_result:undefined@C001(arxiv:2310.00741::72668-72673)",
+      "tool_result:undefined@C001(arxiv:2403.18802::20938-20971)",
+      "tool_result:undefined@C001(arxiv:2403.18802::33242-33346)",
+      "tool_result:undefined@C001(arxiv:2503.07937::16773-16789)",
+      "tool_result:undefined@C001(arxiv:2503.07937::22391-22407)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> E_POLARITY_CONFLICT",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "boundary-04-quote-distortion",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2403.18802::33242-33346)",
+      "tool_result:undefined@C001(arxiv:2403.18802::4423-4539)",
+      "tool_result:undefined@C001(arxiv:2403.18802::912-1080)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76195-76326)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8902-9002)",
+      "tool_result:undefined@C001(arxiv:2403.18802::80059-80128)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8412-8431)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76327-76566)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> ",
+      "tool_call:vericite_quote_check(arxiv:2403.18802::4423-4539)",
+      "verify:quote_checked(arxiv:2403.18802::4423-4539)",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "boundary-05-out-of-scope",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2412.15280::23403-23539)",
+      "tool_result:undefined@C001(arxiv:2503.03149::21633-21757)",
+      "tool_result:undefined@C001(arxiv:2502.10003::17686-17815)",
+      "tool_result:undefined@C001(arxiv:2602.07253::1556-1727)",
+      "tool_result:undefined@C001(arxiv:2502.10003::38030-38053)",
+      "tool_result:undefined@C001(arxiv:2112.01640::28696-28816)",
+      "tool_result:undefined@C001(arxiv:2312.09075::15864-15939)",
+      "tool_result:undefined@C001(arxiv:2510.07238::35868-35953)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> E_UNSUPPORTED_NUMERIC",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "failure-01-fake-span",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2403.18802::33242-33346)",
+      "tool_result:undefined@C001(arxiv:2403.18802::4423-4539)",
+      "tool_result:undefined@C001(arxiv:2403.18802::912-1080)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76195-76326)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8902-9002)",
+      "tool_result:undefined@C001(arxiv:2403.18802::80059-80128)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8412-8431)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76327-76566)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> ",
+      "tool_call:vericite_quote_check(arxiv:2403.18802::999999-999999)",
+      "verify:quote_checked(arxiv:2403.18802::999999-999999)",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "failure-02-injection",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(fixture:poisoned-01::346-450)",
+      "tool_result:undefined@C001(fixture:poisoned-01::614-637)",
+      "tool_result:undefined@C001(fixture:poisoned-01::551-613)",
+      "tool_result:undefined@C001(fixture:benign-01::384-460)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> E_INJECTION_SUSPECTED|E_INJECTION_SUSPECTED",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "failure-03-model-conflict",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2403.18802::33242-33346)",
+      "tool_result:undefined@C001(arxiv:2403.18802::4423-4539)",
+      "tool_result:undefined@C001(arxiv:2403.18802::912-1080)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76195-76326)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8902-9002)",
+      "tool_result:undefined@C001(arxiv:2403.18802::80059-80128)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8412-8431)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76327-76566)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> ",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  },
+  {
+    "case_id": "failure-04-empty-input",
+    "chain": [
+      "verify:abort -> E_EMPTY_QUERY"
+    ]
+  },
+  {
+    "case_id": "normal-01",
+    "chain": [
+      "tool_call:vericite_claim_search@C001",
+      "tool_result:undefined@C001",
+      "tool_result:undefined@C001(arxiv:2403.18802::4423-4539)",
+      "tool_result:undefined@C001(arxiv:2403.18802::33242-33346)",
+      "tool_result:undefined@C001(arxiv:2403.18802::76195-76326)",
+      "tool_result:undefined@C001(arxiv:2403.18802::80059-80128)",
+      "tool_result:undefined@C001(arxiv:2403.18802::69765-69907)",
+      "tool_result:undefined@C001(arxiv:2403.18802::8902-9002)",
+      "tool_result:undefined@C001(arxiv:2403.18802::912-1080)",
+      "tool_result:undefined@C001(arxiv:2403.18802::178815-178930)",
+      "tool_result:undefined@C001",
+      "verify:claim_verified@C001 -> ",
+      "tool_call:vericite_claim_search@C002",
+      "tool_result:undefined@C002",
+      "tool_result:undefined@C002(arxiv:2401.00396::32211-32378)",
+      "tool_result:undefined@C002(arxiv:2401.00396::6583-6724)",
+      "tool_result:undefined@C002(arxiv:2401.00396::1148-1321)",
+      "tool_result:undefined@C002(arxiv:2401.00396::6073-6218)",
+      "tool_result:undefined@C002(arxiv:2401.00396::5974-6071)",
+      "tool_result:undefined@C002(arxiv:2401.00396::269-364)",
+      "tool_result:undefined@C002(arxiv:2401.00396::11373-11459)",
+      "tool_result:undefined@C002(arxiv:2407.04046::98884-99026)",
+      "tool_result:undefined@C002",
+      "verify:claim_verified@C002 -> ",
+      "verify:dual_channel_adjudicated",
+      "exception:decision"
+    ]
+  }
+]

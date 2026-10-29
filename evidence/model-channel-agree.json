@@ -1,0 +1,817 @@
+{
+  "vericite_version": "1.0.0",
+  "decision": "PASS",
+  "input_text": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+  "corpus": {
+    "corpus_id": "vericite-corpus-v1",
+    "doc_count": 32,
+    "span_count": 26092,
+    "content_sha256": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3"
+  },
+  "summary": {
+    "sentences": 2,
+    "atomic_claims": 2,
+    "supported": 2,
+    "contradicted": 0,
+    "insufficient": 0,
+    "grounding_rate": 1,
+    "elapsed_ms": 22
+  },
+  "claims": [
+    {
+      "claim_id": "C001",
+      "claim": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。",
+      "char_range": [
+        0,
+        36
+      ],
+      "split_from": null,
+      "verdict": "supported",
+      "confidence": 0.99,
+      "evidence_for_claim": [
+        {
+          "span_id": "arxiv:2403.18802::4423-4539",
+          "doc_id": "arxiv:2403.18802",
+          "doc_title": "Long-form factuality in large language models",
+          "year": 2024,
+          "section": "1 Introduction",
+          "char_range": [
+            4423,
+            4539
+          ],
+          "text": "LongFact consists of 2,280 fact-seeking prompts that solicit long-form responses across 38 manually-selected topics.",
+          "verdict": "supported",
+          "coverage": 1,
+          "bm25": 80.6611,
+          "cross_lingual": true,
+          "role": "support"
+        },
+        {
+          "span_id": "arxiv:2403.18802::76195-76326",
+          "doc_id": "arxiv:2403.18802",
+          "doc_title": "Long-form factuality in large language models",
+          "year": 2024,
+          "section": "B.1 Data-generation process",
+          "char_range": [
+            76195,
+            76326
+          ],
+          "text": "We manually selected a set of 38 topics for LongFact in order to provide broad coverage of long-form factuality across many topics.",
+          "verdict": "supported",
+          "coverage": 0.6947,
+          "bm25": 56.9777,
+          "cross_lingual": true,
+          "role": "support"
+        },
+        {
+          "span_id": "arxiv:2403.18802::80059-80128",
+          "doc_id": "arxiv:2403.18802",
+          "doc_title": "Long-form factuality in large language models",
+          "year": 2024,
+          "section": "B.2 List of topics",
+          "char_range": [
+            80059,
+            80128
+          ],
+          "text": "Table 6:\nSummary of all 38 manually-selected topics used in LongFact.",
+          "verdict": "insufficient",
+          "coverage": 0.5687,
+          "bm25": 53.1887,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2403.18802::69765-69907",
+          "doc_id": "arxiv:2403.18802",
+          "doc_title": "Long-form factuality in large language models",
+          "year": 2024,
+          "section": "B.1 Data-generation process",
+          "char_range": [
+            69765,
+            69907
+          ],
+          "text": "To create LongFact, we first manually selected a set of 38 topics (shown in Section B.2 ) that provide broad coverage of long-form factuality.",
+          "verdict": "insufficient",
+          "coverage": 0.5687,
+          "bm25": 43.9305,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2403.18802::33242-33346",
+          "doc_id": "arxiv:2403.18802",
+          "doc_title": "Long-form factuality in large language models",
+          "year": 2024,
+          "section": "9 Conclusion",
+          "char_range": [
+            33242,
+            33346
+          ],
+          "text": "To do so, we first used GPT-4 to generate LongFact, a set of 2,280 prompts spanning 38 different topics.",
+          "verdict": "insufficient",
+          "coverage": 0.5644,
+          "bm25": 58.5983,
+          "cross_lingual": true,
+          "role": "candidate"
+        }
+      ],
+      "primary_evidence": {
+        "span_id": "arxiv:2403.18802::4423-4539",
+        "doc_id": "arxiv:2403.18802",
+        "doc_title": "Long-form factuality in large language models",
+        "abs_url": "https://arxiv.org/abs/2403.18802",
+        "char_range": [
+          4423,
+          4539
+        ],
+        "text": "LongFact consists of 2,280 fact-seeking prompts that solicit long-form responses across 38 manually-selected topics."
+      },
+      "errors": [],
+      "metrics": {
+        "retrieval": {
+          "query": "LongFact contains contains consists of comprises includes 2280 条 prompt prompts ， covers covering spanning across span 38 个 manual manually manually-selected manually selected human selected chosen manually-selected manually selected 的 topic topics 。",
+          "original_query": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。",
+          "hits": 8,
+          "top_bm25": 80.6611
+        },
+        "coverage": 1,
+        "numeric_score": 1,
+        "cross_lingual": true,
+        "bridge_ratio": 0.75,
+        "unmatched_concepts": [],
+        "retrieval_query": "LongFact contains contains consists of comprises includes 2280 条 prompt prompts ， covers covering spanning across span 38 个 manual manually manually-selected manually selected human selected chosen manually-selected manually selected 的 topic topics 。",
+        "thresholds": {
+          "SUPPORT_COVERAGE": 0.62,
+          "NO_EVIDENCE_COVERAGE": 0.24,
+          "CONTRADICTION_MIN_COVERAGE": 0.5,
+          "NUMERIC_RELEVANCE": 0.3,
+          "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+          "QUOTE_NORM_TOLERANCE": 0.06,
+          "MIN_BRIDGE_RATIO": 0.5
+        }
+      },
+      "final_verdict": "supported",
+      "consensus": "agree",
+      "model_verdict": {
+        "claim_id": "C001",
+        "verdict": "supported",
+        "reason": "证据片段明确指出LongFact包含2,280条提示并覆盖38个人工选定的主题，与主张完全一致。"
+      }
+    },
+    {
+      "claim_id": "C002",
+      "claim": "RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+      "char_range": [
+        36,
+        74
+      ],
+      "split_from": null,
+      "verdict": "supported",
+      "confidence": 0.9368,
+      "evidence_for_claim": [
+        {
+          "span_id": "arxiv:2401.00396::32211-32378",
+          "doc_id": "arxiv:2401.00396",
+          "doc_title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "year": 2023,
+          "section": "6.3 Hallucination Suppression",
+          "char_range": [
+            32211,
+            32378
+          ],
+          "text": "In this paper, we introduce RAGTruth, a large-scale corpus of naturally generated hallucinations, featuring detailed word-level annotations tailored for RAG scenarios.",
+          "verdict": "supported",
+          "coverage": 0.8419,
+          "bm25": 75.8,
+          "cross_lingual": true,
+          "role": "support"
+        },
+        {
+          "span_id": "arxiv:2401.00396::6583-6724",
+          "doc_id": "arxiv:2401.00396",
+          "doc_title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "year": 2023,
+          "section": "1 Introduction",
+          "char_range": [
+            6583,
+            6724
+          ],
+          "text": "We propose RAGTruth, a large-scale word-level hallucination evaluation dataset specifically for the RAG scenario across several common tasks.",
+          "verdict": "insufficient",
+          "coverage": 0.5789,
+          "bm25": 51.7614,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2401.00396::1148-1321",
+          "doc_id": "arxiv:2401.00396",
+          "doc_title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "year": 2023,
+          "section": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "char_range": [
+            1148,
+            1321
+          ],
+          "text": "This paper presents RAGTruth, a corpus tailored for analyzing word-level hallucinations in various domains and tasks within the standard RAG frameworks for LLM applications.",
+          "verdict": "insufficient",
+          "coverage": 0.4894,
+          "bm25": 37.9465,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2401.00396::6073-6218",
+          "doc_id": "arxiv:2401.00396",
+          "doc_title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "year": 2023,
+          "section": "1 Introduction",
+          "char_range": [
+            6073,
+            6218
+          ],
+          "text": "In this paper, we introduce a large-scale high-quality dataset specifically designed for word-level hallucination detection for RAG applications.",
+          "verdict": "insufficient",
+          "coverage": 0.3805,
+          "bm25": 36.3032,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2407.04046::98884-99026",
+          "doc_id": "arxiv:2407.04046",
+          "doc_title": "Systematic Task Exploration with LLMs: A Study in Citation Text Generation",
+          "year": 2024,
+          "section": "Appendix E Example Generations",
+          "char_range": [
+            98884,
+            99026
+          ],
+          "text": "The paper describes scenarios where this approach is useful and provides a corpus of annotated sentence pairs as a testbed for this technique.",
+          "verdict": "insufficient",
+          "coverage": 0.3657,
+          "bm25": 25.2564,
+          "cross_lingual": true,
+          "role": "candidate"
+        }
+      ],
+      "primary_evidence": {
+        "span_id": "arxiv:2401.00396::32211-32378",
+        "doc_id": "arxiv:2401.00396",
+        "doc_title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+        "abs_url": "https://arxiv.org/abs/2401.00396",
+        "char_range": [
+          32211,
+          32378
+        ],
+        "text": "In this paper, we introduce RAGTruth, a large-scale corpus of naturally generated hallucinations, featuring detailed word-level annotations tailored for RAG scenarios."
+      },
+      "errors": [],
+      "metrics": {
+        "retrieval": {
+          "query": "RAGTruth 是一个大 scale size large-scale hallucination hallucinations hallucinate corpus corpora ， provides provide offering offers features feature featuring comes with 面向 RAG scenario scenarios setting settings 的 word-level annotation word-level annotations word level annotation 。",
+          "original_query": "RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+          "hits": 8,
+          "top_bm25": 75.8
+        },
+        "coverage": 0.8419,
+        "numeric_score": 1,
+        "cross_lingual": true,
+        "bridge_ratio": 1,
+        "unmatched_concepts": [
+          "面向"
+        ],
+        "retrieval_query": "RAGTruth 是一个大 scale size large-scale hallucination hallucinations hallucinate corpus corpora ， provides provide offering offers features feature featuring comes with 面向 RAG scenario scenarios setting settings 的 word-level annotation word-level annotations word level annotation 。",
+        "thresholds": {
+          "SUPPORT_COVERAGE": 0.62,
+          "NO_EVIDENCE_COVERAGE": 0.24,
+          "CONTRADICTION_MIN_COVERAGE": 0.5,
+          "NUMERIC_RELEVANCE": 0.3,
+          "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+          "QUOTE_NORM_TOLERANCE": 0.06,
+          "MIN_BRIDGE_RATIO": 0.5
+        }
+      },
+      "final_verdict": "supported",
+      "consensus": "agree",
+      "model_verdict": {
+        "claim_id": "C002",
+        "verdict": "supported",
+        "reason": "证据片段介绍RAGTruth为大规模自然生成幻觉语料库，且具备面向RAG场景的详细词级标注，与主张一致。"
+      }
+    }
+  ],
+  "non_claim_sentences": [],
+  "quote_checks": [],
+  "errors": [],
+  "error_codes": [],
+  "ledger": [
+    {
+      "ts": "2026-10-03T23:55:20.549Z",
+      "seq": 1,
+      "stage": "tool_call",
+      "action": "agnes_model_channel_request",
+      "model": "agnes-3.0-flash",
+      "base_url": "https://api.agnes-ai.cn/v1",
+      "claims": 2
+    },
+    {
+      "ts": "2026-10-03T23:55:20.549Z",
+      "seq": 2,
+      "stage": "tool_result",
+      "action": "agnes_model_channel_response",
+      "verdicts": [
+        {
+          "claim_id": "C001",
+          "verdict": "supported",
+          "reason": "证据片段明确指出LongFact包含2,280条提示并覆盖38个人工选定的主题，与主张完全一致。"
+        },
+        {
+          "claim_id": "C002",
+          "verdict": "supported",
+          "reason": "证据片段介绍RAGTruth为大规模自然生成幻觉语料库，且具备面向RAG场景的详细词级标注，与主张一致。"
+        }
+      ],
+      "latency_ms": 1972,
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 94
+      }
+    },
+    {
+      "ts": "2026-10-03T23:55:20.549Z",
+      "seq": 3,
+      "stage": "plan",
+      "action": "audit_start",
+      "input_chars": 74
+    },
+    {
+      "ts": "2026-10-03T23:55:20.549Z",
+      "seq": 4,
+      "stage": "plan",
+      "action": "corpus_loaded",
+      "corpus_id": "vericite-corpus-v1",
+      "doc_count": 32,
+      "content_sha256": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3",
+      "span_count": 26092
+    },
+    {
+      "ts": "2026-10-03T23:55:20.549Z",
+      "seq": 5,
+      "stage": "plan",
+      "action": "claim_decomposition",
+      "total_sentences": 2,
+      "atomic_claims": 2,
+      "splits": 0
+    },
+    {
+      "ts": "2026-10-03T23:55:20.549Z",
+      "seq": 6,
+      "stage": "plan",
+      "action": "language_detected",
+      "dominant": "zh"
+    },
+    {
+      "ts": "2026-10-03T23:55:20.549Z",
+      "seq": 7,
+      "stage": "tool_call",
+      "action": "vericite_claim_search",
+      "claim_id": "C001",
+      "query": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。"
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 8,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "retrieve",
+      "query": "LongFact contains contains consists of comprises includes 2280 条 prompt prompts ， covers covering spanning across span 38 个 manual manually manually-selected manually selected human selected chosen manually-selected manually selected 的 topic topics 。",
+      "hits": 8,
+      "reason": "ok",
+      "original_query": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。",
+      "bridged": true
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 9,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::4423-4539",
+      "coverage": 1,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 10,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::33242-33346",
+      "coverage": 0.5644,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 11,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::76195-76326",
+      "coverage": 0.6947,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 12,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::80059-80128",
+      "coverage": 0.5687,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 13,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::69765-69907",
+      "coverage": 0.5687,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 14,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::8902-9002",
+      "coverage": 0.4629,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 15,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::912-1080",
+      "coverage": 0.424,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 16,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::178815-178930",
+      "coverage": 0.1945,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 0.75
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 17,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "aggregate",
+      "verdict": "supported",
+      "confidence": 0.99,
+      "quarantined_spans": 0,
+      "polarity_conflicts": 0,
+      "numeric_substitution": false,
+      "unsatisfied_quantities": 0,
+      "relevant_spans": 7
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 18,
+      "stage": "verify",
+      "action": "claim_verified",
+      "claim_id": "C001",
+      "verdict": "supported",
+      "confidence": 0.99,
+      "primary_span": "arxiv:2403.18802::4423-4539",
+      "error_codes": []
+    },
+    {
+      "ts": "2026-10-03T23:55:20.560Z",
+      "seq": 19,
+      "stage": "tool_call",
+      "action": "vericite_claim_search",
+      "claim_id": "C002",
+      "query": "RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。"
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 20,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "retrieve",
+      "query": "RAGTruth 是一个大 scale size large-scale hallucination hallucinations hallucinate corpus corpora ， provides provide offering offers features feature featuring comes with 面向 RAG scenario scenarios setting settings 的 word-level annotation word-level annotations word level annotation 。",
+      "hits": 8,
+      "reason": "ok",
+      "original_query": "RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+      "bridged": true
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 21,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::32211-32378",
+      "coverage": 0.8419,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 22,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::6583-6724",
+      "coverage": 0.5789,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 23,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::1148-1321",
+      "coverage": 0.4894,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 24,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::6073-6218",
+      "coverage": 0.3805,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 25,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::5974-6071",
+      "coverage": 0.2736,
+      "polarity_differs": true,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 26,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::269-364",
+      "coverage": 0.3061,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 27,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::11373-11459",
+      "coverage": 0.2876,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 28,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2407.04046::98884-99026",
+      "coverage": 0.3657,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:20.570Z",
+      "seq": 29,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "aggregate",
+      "verdict": "supported",
+      "confidence": 0.93676,
+      "quarantined_spans": 0,
+      "polarity_conflicts": 0,
+      "numeric_substitution": false,
+      "unsatisfied_quantities": 0,
+      "relevant_spans": 6
+    },
+    {
+      "ts": "2026-10-03T23:55:20.571Z",
+      "seq": 30,
+      "stage": "verify",
+      "action": "claim_verified",
+      "claim_id": "C002",
+      "verdict": "supported",
+      "confidence": 0.9368,
+      "primary_span": "arxiv:2401.00396::32211-32378",
+      "error_codes": []
+    },
+    {
+      "ts": "2026-10-03T23:55:20.571Z",
+      "seq": 31,
+      "stage": "verify",
+      "action": "dual_channel_adjudicated",
+      "model_opinions": 2,
+      "agreements": 2,
+      "disagreements": 0
+    },
+    {
+      "ts": "2026-10-03T23:55:20.571Z",
+      "seq": 32,
+      "stage": "exception",
+      "action": "decision",
+      "decision": "PASS",
+      "fatal": 0,
+      "degrade": 0,
+      "unsupported_claims": 0
+    }
+  ],
+  "output": {
+    "kind": "verified_summary",
+    "text": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+    "citations": [
+      {
+        "claim_id": "C001",
+        "claim": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。",
+        "verdict": "supported",
+        "citations": [
+          {
+            "span_id": "arxiv:2403.18802::4423-4539",
+            "doc_id": "arxiv:2403.18802",
+            "char_range": [
+              4423,
+              4539
+            ]
+          },
+          {
+            "span_id": "arxiv:2403.18802::76195-76326",
+            "doc_id": "arxiv:2403.18802",
+            "char_range": [
+              76195,
+              76326
+            ]
+          },
+          {
+            "span_id": "arxiv:2403.18802::80059-80128",
+            "doc_id": "arxiv:2403.18802",
+            "char_range": [
+              80059,
+              80128
+            ]
+          },
+          {
+            "span_id": "arxiv:2403.18802::69765-69907",
+            "doc_id": "arxiv:2403.18802",
+            "char_range": [
+              69765,
+              69907
+            ]
+          },
+          {
+            "span_id": "arxiv:2403.18802::33242-33346",
+            "doc_id": "arxiv:2403.18802",
+            "char_range": [
+              33242,
+              33346
+            ]
+          }
+        ],
+        "counter_evidence": []
+      },
+      {
+        "claim_id": "C002",
+        "claim": "RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+        "verdict": "supported",
+        "citations": [
+          {
+            "span_id": "arxiv:2401.00396::32211-32378",
+            "doc_id": "arxiv:2401.00396",
+            "char_range": [
+              32211,
+              32378
+            ]
+          },
+          {
+            "span_id": "arxiv:2401.00396::6583-6724",
+            "doc_id": "arxiv:2401.00396",
+            "char_range": [
+              6583,
+              6724
+            ]
+          },
+          {
+            "span_id": "arxiv:2401.00396::1148-1321",
+            "doc_id": "arxiv:2401.00396",
+            "char_range": [
+              1148,
+              1321
+            ]
+          },
+          {
+            "span_id": "arxiv:2401.00396::6073-6218",
+            "doc_id": "arxiv:2401.00396",
+            "char_range": [
+              6073,
+              6218
+            ]
+          },
+          {
+            "span_id": "arxiv:2407.04046::98884-99026",
+            "doc_id": "arxiv:2407.04046",
+            "char_range": [
+              98884,
+              99026
+            ]
+          }
+        ],
+        "counter_evidence": []
+      }
+    ],
+    "note": "全部主张均已通过双通道核验，每条结论均可回溯到语料中的具体片段。"
+  },
+  "thresholds": {
+    "SUPPORT_COVERAGE": 0.62,
+    "NO_EVIDENCE_COVERAGE": 0.24,
+    "CONTRADICTION_MIN_COVERAGE": 0.5,
+    "NUMERIC_RELEVANCE": 0.3,
+    "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+    "QUOTE_NORM_TOLERANCE": 0.06,
+    "MIN_BRIDGE_RATIO": 0.5
+  },
+  "model_channel": {
+    "enabled": true,
+    "model": "agnes-3.0-flash",
+    "base_url": "https://api.agnes-ai.cn/v1",
+    "requested_claims": 2,
+    "latency_ms": 1972,
+    "prompt_tokens": 353,
+    "completion_tokens": 94,
+    "returned": 2,
+    "dropped": [],
+    "error": null,
+    "verdict_count": 2
+  }
+}

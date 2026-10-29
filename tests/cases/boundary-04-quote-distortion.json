@@ -1,0 +1,19 @@
+{
+  "case_id": "boundary-04-quote-distortion",
+  "category": "boundary",
+  "title": "引文失真（引文被拼接改写）",
+  "focus": "span_id 完全合法、结论本身也有依据，但附带的『原文引用』被改写拼接。这是最隐蔽的引用失真——引用编号真实存在，读者若不逐字回原文核对就会被骗过",
+  "input_text": "LongFact 是一个提示集，包含 2280 条问题，覆盖 38 个主题。",
+  "k": 8,
+  "quotes": [
+    {
+      "span_id": "arxiv:2403.18802::4423-4539",
+      "text": "LongFact consists of 2,280 fact-seeking prompts across 83 manually-selected topics, all verified by human experts."
+    }
+  ],
+  "expect": {
+    "decision": "REFUSE",
+    "error_codes": ["E_QUOTE_MISMATCH"],
+    "min_claims": 1
+  }
+}

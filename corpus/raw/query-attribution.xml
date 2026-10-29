@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Ub6GwTEzpDms4Qm7dauR5KwS6es</id>
+  <title>arXiv Query: search_query=abs:"attribution" AND abs:"language model"&amp;id_list=&amp;start=0&amp;max_results=4</title>
+  <updated>2026-10-03T13:59:45Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22attribution%22+AND+abs:%22language+model%22&amp;start=0&amp;max_results=4&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>4</opensearch:itemsPerPage>
+  <opensearch:totalResults>5168</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2502.08059v1</id>
+    <title>On Mechanistic Circuits for Extractive Question-Answering</title>
+    <updated>2025-02-12T01:54:21Z</updated>
+    <link href="https://arxiv.org/abs/2502.08059v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.08059v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models are increasingly used to process documents and facilitate question-answering on them. In our paper, we extract mechanistic circuits for this real-world language modeling task: context-augmented language modeling for extractive question-answering (QA) tasks and understand the potential benefits of circuits towards downstream applications such as data attribution to context information. We extract circuits as a function of internal model components (e.g., attention heads, MLPs) using causal mediation analysis techniques. Leveraging the extracted circuits, we first understand the interplay between the model's usage of parametric memory and retrieved context towards a better mechanistic understanding of context-augmented language models. We then identify a small set of attention heads in our circuit which performs reliable data attribution by default, thereby obtaining attribution for free in just the model's forward pass. Using this insight, we then introduce ATTNATTRIB, a fast data attribution algorithm which obtains state-of-the-art attribution results across various extractive QA benchmarks. Finally, we show the possibility to steer the language model towards answering from the context, instead of the parametric memory by using the attribution from ATTNATTRIB as an additional signal during the forward pass. Beyond mechanistic understanding, our paper provides tangible applications of circuits in the form of reliable data attribution and model steering.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-12T01:54:21Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Samyadeep Basu</name>
+    </author>
+    <author>
+      <name>Vlad Morariu</name>
+    </author>
+    <author>
+      <name>Zichao Wang</name>
+    </author>
+    <author>
+      <name>Ryan Rossi</name>
+    </author>
+    <author>
+      <name>Cherry Zhao</name>
+    </author>
+    <author>
+      <name>Soheil Feizi</name>
+    </author>
+    <author>
+      <name>Varun Manjunatha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.23080v3</id>
+    <title>The Attribution Contract for Generative Language Models</title>
+    <updated>2026-08-26T22:05:32Z</updated>
+    <link href="https://arxiv.org/abs/2605.23080v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.23080v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Feature attribution scores each part of an input by how much it explains a model's output. We argue that in generative language models these scores carry no fixed meaning. A classifier has a single output to explain, but a generative model produces its output token by token, and each generated token is both an output and an input, so explaining the output becomes several distinct questions. We support this claim by proposing the Attribution Contract, a framework that names the question a set of attribution scores answers. A contract specifies the model score being explained, what is held fixed, the target output, the generation process, and which features can receive attribution, choices that matter in practice. For example, eligible features decide what a score explains: under a local next-token contract, the model's own generated tokens receive $29\%$ of the attribution mass, comparable to the $25\%$ on the input question, and reading this as a prompt-level explanation is a mistake we name the self-attribution fallacy. The generative process also shapes feature attribution: on a mixture-of-experts model, Integrated Gradients completeness is unreliable, since recomputing expert routing along the attribution path leaves a large residual that holding the routing fixed substantially lowers, while a masked-diffusion model, which fixes its choices at generation, has a residual that instead decreases with more steps. These results show that Attribution Contracts should be carefully specified when proposing and evaluating attribution methods for generative language models, since the meaning and evaluation of an attribution depend on its explanatory setting.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T22:27:04Z</published>
+    <arxiv:comment>Preprint, 15 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Giang Nguyen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2311.12233v1</id>
+    <title>Unifying Corroborative and Contributive Attributions in Large Language Models</title>
+    <updated>2023-11-20T23:17:20Z</updated>
+    <link href="https://arxiv.org/abs/2311.12233v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2311.12233v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As businesses, products, and services spring up around large language models, the trustworthiness of these models hinges on the verifiability of their outputs. However, methods for explaining language model outputs largely fall across two distinct fields of study which both use the term "attribution" to refer to entirely separate techniques: citation generation and training data attribution. In many modern applications, such as legal document generation and medical question answering, both types of attributions are important. In this work, we argue for and present a unified framework of large language model attributions. We show how existing methods of different types of attribution fall under the unified framework. We also use the framework to discuss real-world use cases where one or both types of attributions are required. We believe that this unified framework will guide the use case driven development of systems that leverage both types of attribution, as well as the standardization of their evaluation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-11-20T23:17:20Z</published>
+    <arxiv:comment>NeurIPS ATTRIB Workshop 2023</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Theodora Worledge</name>
+    </author>
+    <author>
+      <name>Judy Hanwen Shen</name>
+    </author>
+    <author>
+      <name>Nicole Meister</name>
+    </author>
+    <author>
+      <name>Caleb Winston</name>
+    </author>
+    <author>
+      <name>Carlos Guestrin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.13258v1</id>
+    <title>Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive LLMs</title>
+    <updated>2026-04-14T19:43:43Z</updated>
+    <link href="https://arxiv.org/abs/2604.13258v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.13258v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Attribution methods seek to explain language model predictions by quantifying the contribution of input tokens to generated outputs. However, most existing techniques are designed for encoder-based architectures and rely on linear approximations that fail to capture the causal and semantic complexities of autoregressive generation in decoder-only models. To address these limitations, we propose Hessian-Enhanced Token Attribution (HETA), a novel attribution framework tailored for decoder-only language models. HETA combines three complementary components: a semantic transition vector that captures token-to-token influence across layers, Hessian-based sensitivity scores that model second-order effects, and KL divergence to measure information loss when tokens are masked. This unified design produces context-aware, causally faithful, and semantically grounded attributions. Additionally, we introduce a curated benchmark dataset for systematically evaluating attribution quality in generative settings. Empirical evaluations across multiple models and datasets demonstrate that HETA consistently outperforms existing methods in attribution faithfulness and alignment with human annotations, establishing a new standard for interpretability in autoregressive language models.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-14T19:43:43Z</published>
+    <arxiv:comment>Accepted at ICLR 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Vishal Pramanik</name>
+    </author>
+    <author>
+      <name>Maisha Maliha</name>
+    </author>
+    <author>
+      <name>Nathaniel D. Bastian</name>
+    </author>
+    <author>
+      <name>Sumit Kumar Jha</name>
+    </author>
+  </entry>
+</feed>

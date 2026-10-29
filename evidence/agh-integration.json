@@ -1,0 +1,1451 @@
+{
+  "vericite_version": "1.0.0",
+  "generated_at": "2026-10-03T13:41:55.993Z",
+  "generator": "node tools/agh-integration.mjs（tsx 运行）",
+  "runtime": {
+    "node": "v24.21.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "agh": {
+    "repo": "C:\\Users\\86150\\WorkBuddy\\2026-10-03-20-48-23\\agnes-harness",
+    "modules_used": [
+      "packages/package-manager/src/plugin-manifest.ts (parseAgnesPluginEntries)",
+      "packages/cordis/src/index.ts (Context / Fiber 生命周期与依赖注入)",
+      "packages/extension-api/src/index.ts (checkToolDef / checkToolMeta)",
+      "packages/protocol/src/validate.ts (validateAgainst)"
+    ],
+    "note": "本脚本不连接模型、不启动 daemon，验证的是「插件在 AGH 装载契约下可用」。模型闭环需另配 Agnes 凭据。"
+  },
+  "manifest_declaration": {
+    "export": "vericitePlugin",
+    "id": "ext:vericite/provenance",
+    "runtime": "in-process",
+    "default": true,
+    "inject": [
+      "extension"
+    ]
+  },
+  "tools_registered": [],
+  "observed_hooks": [
+    "session_start"
+  ],
+  "tool_definitions": [
+    {
+      "name": "vericite_corpus_overview",
+      "name_valid": true,
+      "description_chars": 109,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    },
+    {
+      "name": "vericite_search",
+      "name_valid": true,
+      "description_chars": 143,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    },
+    {
+      "name": "vericite_fetch_span",
+      "name_valid": true,
+      "description_chars": 93,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    },
+    {
+      "name": "vericite_verify_claim",
+      "name_valid": true,
+      "description_chars": 203,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    },
+    {
+      "name": "vericite_check_quote",
+      "name_valid": true,
+      "description_chars": 68,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    },
+    {
+      "name": "vericite_split_claims",
+      "name_valid": true,
+      "description_chars": 79,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    },
+    {
+      "name": "vericite_audit",
+      "name_valid": true,
+      "description_chars": 179,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    },
+    {
+      "name": "vericite_error_catalog",
+      "name_valid": true,
+      "description_chars": 50,
+      "def_ok": true,
+      "def_problems": [],
+      "meta_ok": true,
+      "meta_problems": [],
+      "meta": {
+        "isReadOnly": true,
+        "isDestructive": false,
+        "isConcurrencySafe": true,
+        "isOpenWorld": false,
+        "replay": "safe",
+        "deferLoading": false,
+        "requiresApproval": "never"
+      }
+    }
+  ],
+  "schema_validation": [
+    {
+      "tool": "vericite_search",
+      "args": {
+        "query": "幻觉 归因"
+      },
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "tool": "vericite_search",
+      "args": {},
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_search",
+      "args": {
+        "query": "x",
+        "extra": 1
+      },
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_search",
+      "args": {
+        "query": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_search",
+      "args": {
+        "query": 42
+      },
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_verify_claim",
+      "args": {
+        "claim": "RAG 能降低幻觉"
+      },
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "tool": "vericite_verify_claim",
+      "args": {
+        "claim": "x",
+        "k": 999
+      },
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_fetch_span",
+      "args": {
+        "span_id": "arxiv:2305.00001::100-200"
+      },
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "tool": "vericite_fetch_span",
+      "args": {},
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_audit",
+      "args": {
+        "text": "测试文本。",
+        "k": 8
+      },
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "tool": "vericite_audit",
+      "args": {
+        "text": "测试文本。",
+        "model_verdicts": [
+          {
+            "claim_id": "C001"
+          }
+        ]
+      },
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_split_claims",
+      "args": {
+        "text": "一句话。"
+      },
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "tool": "vericite_split_claims",
+      "args": {
+        "text": 1
+      },
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "tool": "vericite_error_catalog",
+      "args": {},
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "tool": "vericite_error_catalog",
+      "args": {
+        "unexpected": true
+      },
+      "expected_valid": false,
+      "actual_valid": false
+    }
+  ],
+  "tool_call_chain": [
+    "vericite_corpus_overview",
+    "vericite_search",
+    "vericite_fetch_span",
+    "vericite_split_claims",
+    "vericite_verify_claim",
+    "vericite_check_quote",
+    "vericite_audit",
+    "vericite_error_catalog",
+    "vericite_audit_positive"
+  ],
+  "ledger": [
+    {
+      "seq": 1,
+      "ts": "2026-10-03T13:41:53.689Z",
+      "stage": "plan",
+      "action": "integration_start",
+      "agh_repo": "C:\\Users\\86150\\WorkBuddy\\2026-10-03-20-48-23\\agnes-harness",
+      "node": "v24.21.0"
+    },
+    {
+      "seq": 2,
+      "ts": "2026-10-03T13:41:55.477Z",
+      "stage": "plan",
+      "action": "agh_modules_loaded",
+      "cordis": "packages/cordis/src/index.ts",
+      "extension_api": "packages/extension-api/src/index.ts",
+      "package_manager": "packages/package-manager/src/plugin-manifest.ts",
+      "protocol": "packages/protocol/src/validate.ts"
+    },
+    {
+      "seq": 3,
+      "ts": "2026-10-03T13:41:55.479Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "插件清单可被 AGH 解析",
+      "detail": "解析出 1 条声明"
+    },
+    {
+      "seq": 4,
+      "ts": "2026-10-03T13:41:55.479Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "声明了扩展入口导出名",
+      "detail": "export=vericitePlugin"
+    },
+    {
+      "seq": 5,
+      "ts": "2026-10-03T13:41:55.479Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "声明了插件 id",
+      "detail": "id=ext:vericite/provenance"
+    },
+    {
+      "seq": 6,
+      "ts": "2026-10-03T13:41:55.479Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "声明了 extension 注入依赖",
+      "detail": "inject=[\"extension\"]"
+    },
+    {
+      "seq": 7,
+      "ts": "2026-10-03T13:41:55.479Z",
+      "stage": "plan",
+      "action": "manifest_parsed",
+      "package": "vericite",
+      "declaration": {
+        "export": "vericitePlugin",
+        "id": "ext:vericite/provenance",
+        "runtime": "in-process",
+        "default": true,
+        "inject": [
+          "extension"
+        ]
+      }
+    },
+    {
+      "seq": 8,
+      "ts": "2026-10-03T13:41:55.501Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "清单声明的导出在模块中真实存在",
+      "detail": "typeof=function"
+    },
+    {
+      "seq": 9,
+      "ts": "2026-10-03T13:41:55.501Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "模块导出与静态声明的注入依赖一致",
+      "detail": "module=[\"extension\"] / manifest=[\"extension\"]"
+    },
+    {
+      "seq": 10,
+      "ts": "2026-10-03T13:41:55.506Z",
+      "stage": "tool_call",
+      "action": "agh_plugin_mounted",
+      "tools": [
+        "vericite_corpus_overview",
+        "vericite_search",
+        "vericite_fetch_span",
+        "vericite_verify_claim",
+        "vericite_check_quote",
+        "vericite_split_claims",
+        "vericite_audit",
+        "vericite_error_catalog"
+      ],
+      "hooks": [
+        "session_start"
+      ]
+    },
+    {
+      "seq": 11,
+      "ts": "2026-10-03T13:41:55.506Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "插件在 AGH 的 Cordis 运行时中装载成功",
+      "detail": "工具数=8"
+    },
+    {
+      "seq": 12,
+      "ts": "2026-10-03T13:41:55.506Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "注册了预期数量的工具",
+      "detail": "实际 8 个：vericite_corpus_overview, vericite_search, vericite_fetch_span, vericite_verify_claim, vericite_check_quote, vericite_split_claims, vericite_audit, vericite_error_catalog"
+    },
+    {
+      "seq": 13,
+      "ts": "2026-10-03T13:41:55.506Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "注册了 session_start 观察钩子",
+      "detail": "session_start"
+    },
+    {
+      "seq": 14,
+      "ts": "2026-10-03T13:41:55.506Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_corpus_overview",
+      "detail": "ok"
+    },
+    {
+      "seq": 15,
+      "ts": "2026-10-03T13:41:55.506Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_corpus_overview",
+      "detail": "ok"
+    },
+    {
+      "seq": 16,
+      "ts": "2026-10-03T13:41:55.506Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_search",
+      "detail": "ok"
+    },
+    {
+      "seq": 17,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_search",
+      "detail": "ok"
+    },
+    {
+      "seq": 18,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_fetch_span",
+      "detail": "ok"
+    },
+    {
+      "seq": 19,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_fetch_span",
+      "detail": "ok"
+    },
+    {
+      "seq": 20,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_verify_claim",
+      "detail": "ok"
+    },
+    {
+      "seq": 21,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_verify_claim",
+      "detail": "ok"
+    },
+    {
+      "seq": 22,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_check_quote",
+      "detail": "ok"
+    },
+    {
+      "seq": 23,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_check_quote",
+      "detail": "ok"
+    },
+    {
+      "seq": 24,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_split_claims",
+      "detail": "ok"
+    },
+    {
+      "seq": 25,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_split_claims",
+      "detail": "ok"
+    },
+    {
+      "seq": 26,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_audit",
+      "detail": "ok"
+    },
+    {
+      "seq": 27,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_audit",
+      "detail": "ok"
+    },
+    {
+      "seq": 28,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具定义通过 AGH 校验：vericite_error_catalog",
+      "detail": "ok"
+    },
+    {
+      "seq": 29,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "工具元数据通过 AGH 校验：vericite_error_catalog",
+      "detail": "ok"
+    },
+    {
+      "seq": 30,
+      "ts": "2026-10-03T13:41:55.507Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_search 接受 {\"query\":\"幻觉 归因\"}",
+      "detail": "expected=true actual=true"
+    },
+    {
+      "seq": 31,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_search 拒绝 {}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 32,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_search 拒绝 {\"query\":\"x\",\"extra\":1}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 33,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_search 拒绝 {\"query\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 34,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_search 拒绝 {\"query\":42}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 35,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_verify_claim 接受 {\"claim\":\"RAG 能降低幻觉\"}",
+      "detail": "expected=true actual=true"
+    },
+    {
+      "seq": 36,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_verify_claim 拒绝 {\"claim\":\"x\",\"k\":999}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 37,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_fetch_span 接受 {\"span_id\":\"arxiv:2305.00001::100-200\"}",
+      "detail": "expected=true actual=true"
+    },
+    {
+      "seq": 38,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_fetch_span 拒绝 {}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 39,
+      "ts": "2026-10-03T13:41:55.508Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_audit 接受 {\"text\":\"测试文本。\",\"k\":8}",
+      "detail": "expected=true actual=true"
+    },
+    {
+      "seq": 40,
+      "ts": "2026-10-03T13:41:55.509Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_audit 拒绝 {\"text\":\"测试文本。\",\"model_verdicts\":[{\"claim_id\":\"C001\"}]}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 41,
+      "ts": "2026-10-03T13:41:55.509Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_split_claims 接受 {\"text\":\"一句话。\"}",
+      "detail": "expected=true actual=true"
+    },
+    {
+      "seq": 42,
+      "ts": "2026-10-03T13:41:55.509Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_split_claims 拒绝 {\"text\":1}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 43,
+      "ts": "2026-10-03T13:41:55.509Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_error_catalog 接受 {}",
+      "detail": "expected=true actual=true"
+    },
+    {
+      "seq": 44,
+      "ts": "2026-10-03T13:41:55.509Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "参数校验（AGH validateAgainst）vericite_error_catalog 拒绝 {\"unexpected\":true}",
+      "detail": "expected=false actual=false"
+    },
+    {
+      "seq": 45,
+      "ts": "2026-10-03T13:41:55.509Z",
+      "stage": "tool_call",
+      "action": "vericite_corpus_overview",
+      "args": {}
+    },
+    {
+      "seq": 46,
+      "ts": "2026-10-03T13:41:55.924Z",
+      "stage": "tool_result",
+      "action": "vericite_corpus_overview_result",
+      "ms": 415,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "corpus_id",
+        "domain",
+        "doc_count",
+        "fulltext_count",
+        "span_count",
+        "total_chars",
+        "content_sha256",
+        "by_category",
+        "by_year",
+        "license_note",
+        "guidance"
+      ]
+    },
+    {
+      "seq": 47,
+      "ts": "2026-10-03T13:41:55.924Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_corpus_overview",
+      "detail": {
+        "corpus_id": "vericite-corpus-v1",
+        "span_count": 26092
+      }
+    },
+    {
+      "seq": 48,
+      "ts": "2026-10-03T13:41:55.924Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "语料边界工具返回语料指纹",
+      "detail": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3"
+    },
+    {
+      "seq": 49,
+      "ts": "2026-10-03T13:41:55.924Z",
+      "stage": "tool_call",
+      "action": "vericite_search",
+      "args": {
+        "query": "retrieval augmented generation hallucination factuality benchmark",
+        "k": 6
+      }
+    },
+    {
+      "seq": 50,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "tool_result",
+      "action": "vericite_search_result",
+      "ms": 11,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "query",
+        "hits",
+        "quarantined_spans",
+        "total_before_guard",
+        "reason",
+        "next_step"
+      ]
+    },
+    {
+      "seq": 51,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_search",
+      "detail": {
+        "hits": 6,
+        "quarantined": 0
+      }
+    },
+    {
+      "seq": 52,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "检索步骤返回带 span_id 的候选证据",
+      "detail": "6 条"
+    },
+    {
+      "seq": 53,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "tool_call",
+      "action": "vericite_fetch_span",
+      "args": {
+        "span_id": "arxiv:2401.00396::33184-33307"
+      }
+    },
+    {
+      "seq": 54,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "tool_result",
+      "action": "vericite_fetch_span_result",
+      "ms": 0,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "span_id",
+        "doc_id",
+        "doc_title",
+        "year",
+        "section",
+        "char_range",
+        "text",
+        "verbatim",
+        "verbatim_matches",
+        "context_before",
+        "context_after",
+        "source"
+      ]
+    },
+    {
+      "seq": 55,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_fetch_span",
+      "detail": {
+        "span_id": "arxiv:2401.00396::33184-33307"
+      }
+    },
+    {
+      "seq": 56,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "取回的原文与语料切片逐字一致（可回溯）",
+      "detail": "verbatim_matches=true"
+    },
+    {
+      "seq": 57,
+      "ts": "2026-10-03T13:41:55.935Z",
+      "stage": "tool_call",
+      "action": "vericite_split_claims",
+      "args": {
+        "text": "LongFact 是一个提示集，包含 2280 条问题，覆盖 83 个主题。"
+      }
+    },
+    {
+      "seq": 58,
+      "ts": "2026-10-03T13:41:55.936Z",
+      "stage": "tool_result",
+      "action": "vericite_split_claims_result",
+      "ms": 1,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "total_sentences",
+        "atomic_claims",
+        "claims",
+        "splits",
+        "next_step"
+      ]
+    },
+    {
+      "seq": 59,
+      "ts": "2026-10-03T13:41:55.936Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_split_claims",
+      "detail": {
+        "atomic": 1
+      }
+    },
+    {
+      "seq": 60,
+      "ts": "2026-10-03T13:41:55.936Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "规划步骤拆出可核查主张",
+      "detail": "1 条"
+    },
+    {
+      "seq": 61,
+      "ts": "2026-10-03T13:41:55.936Z",
+      "stage": "tool_call",
+      "action": "vericite_verify_claim",
+      "args": {
+        "claim": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。"
+      }
+    },
+    {
+      "seq": 62,
+      "ts": "2026-10-03T13:41:55.954Z",
+      "stage": "tool_result",
+      "action": "vericite_verify_claim_result",
+      "ms": 18,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "claim",
+        "verdict",
+        "confidence",
+        "primary_evidence",
+        "evidence",
+        "metrics",
+        "errors",
+        "rule"
+      ]
+    },
+    {
+      "seq": 63,
+      "ts": "2026-10-03T13:41:55.954Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_verify_claim",
+      "detail": {
+        "verdict": "supported"
+      }
+    },
+    {
+      "seq": 64,
+      "ts": "2026-10-03T13:41:55.954Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "确定性核验给出判定与指标",
+      "detail": "supported"
+    },
+    {
+      "seq": 65,
+      "ts": "2026-10-03T13:41:55.954Z",
+      "stage": "tool_call",
+      "action": "vericite_check_quote",
+      "args": {
+        "span_id": "arxiv:2401.00396::33184-33307",
+        "quoted_text": "本文证明检索增强生成可以完全消除幻觉。"
+      }
+    },
+    {
+      "seq": 66,
+      "ts": "2026-10-03T13:41:55.955Z",
+      "stage": "tool_result",
+      "action": "vericite_check_quote_result",
+      "ms": 1,
+      "ok": false,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "span_id",
+        "similarity",
+        "actual_span_text",
+        "errors"
+      ]
+    },
+    {
+      "seq": 67,
+      "ts": "2026-10-03T13:41:55.955Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_check_quote",
+      "detail": {
+        "ok": false,
+        "similarity": 0
+      }
+    },
+    {
+      "seq": 68,
+      "ts": "2026-10-03T13:41:55.955Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "引文失真被检出",
+      "detail": "similarity=0"
+    },
+    {
+      "seq": 69,
+      "ts": "2026-10-03T13:41:55.955Z",
+      "stage": "tool_call",
+      "action": "vericite_audit",
+      "args": {
+        "text": "LongFact 是一个提示集，包含 2280 条问题，覆盖 83 个主题。",
+        "k": 8,
+        "quotes": []
+      }
+    },
+    {
+      "seq": 70,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "tool_result",
+      "action": "vericite_audit_result",
+      "ms": 15,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "decision",
+        "summary",
+        "output",
+        "error_codes",
+        "errors",
+        "claims",
+        "citation_map",
+        "ledger_entries",
+        "obligation"
+      ]
+    },
+    {
+      "seq": 71,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_audit",
+      "detail": {
+        "decision": "REFUSE",
+        "codes": [
+          "E_UNSUPPORTED_NUMERIC"
+        ]
+      }
+    },
+    {
+      "seq": 72,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "无依据的结论被拒绝输出",
+      "detail": "decision=REFUSE"
+    },
+    {
+      "seq": 73,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "拒绝时给出结构化错误码",
+      "detail": "E_UNSUPPORTED_NUMERIC"
+    },
+    {
+      "seq": 74,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "拒绝时不产生对外结论",
+      "detail": "output.kind=refusal"
+    },
+    {
+      "seq": 75,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "tool_call",
+      "action": "vericite_error_catalog",
+      "args": {}
+    },
+    {
+      "seq": 76,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "tool_result",
+      "action": "vericite_error_catalog_result",
+      "ms": 0,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "codes",
+        "thresholds"
+      ]
+    },
+    {
+      "seq": 77,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_error_catalog",
+      "detail": {
+        "codes": 17
+      }
+    },
+    {
+      "seq": 78,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "错误码字典可被查询",
+      "detail": "17 条"
+    },
+    {
+      "seq": 79,
+      "ts": "2026-10-03T13:41:55.970Z",
+      "stage": "tool_call",
+      "action": "vericite_audit",
+      "args": {
+        "text": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+        "k": 8
+      }
+    },
+    {
+      "seq": 80,
+      "ts": "2026-10-03T13:41:55.991Z",
+      "stage": "tool_result",
+      "action": "vericite_audit_result",
+      "ms": 21,
+      "ok": true,
+      "is_error": false,
+      "keys": [
+        "ok",
+        "decision",
+        "summary",
+        "output",
+        "error_codes",
+        "errors",
+        "claims",
+        "citation_map",
+        "ledger_entries",
+        "obligation"
+      ]
+    },
+    {
+      "seq": 81,
+      "ts": "2026-10-03T13:41:55.991Z",
+      "stage": "tool_call",
+      "action": "chain_step",
+      "step": "vericite_audit_positive",
+      "detail": {
+        "decision": "PASS",
+        "grounding": 1
+      }
+    },
+    {
+      "seq": 82,
+      "ts": "2026-10-03T13:41:55.991Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "有原文依据的结论被放行且逐条附带引用",
+      "detail": "kind=verified_summary citations=2"
+    },
+    {
+      "seq": 83,
+      "ts": "2026-10-03T13:41:55.991Z",
+      "stage": "exception",
+      "action": "agh_plugin_unmounted",
+      "tools_left": 0
+    },
+    {
+      "seq": 84,
+      "ts": "2026-10-03T13:41:55.991Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "卸载后工具随 fiber 一并回收（无残留能力）",
+      "detail": "剩余 0 个"
+    },
+    {
+      "seq": 85,
+      "ts": "2026-10-03T13:41:55.993Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "插件可在一个全新的 Cordis 上下文中重新装载",
+      "detail": "二次装载工具数=8"
+    },
+    {
+      "seq": 86,
+      "ts": "2026-10-03T13:41:55.993Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "两次装载注册的工具集合完全一致（装载行为可复现）",
+      "detail": "第一次与第二次注册的工具名一致"
+    },
+    {
+      "seq": 87,
+      "ts": "2026-10-03T13:41:55.993Z",
+      "stage": "verify",
+      "action": "check_passed",
+      "check": "二次装载的 fiber 同样能干净卸载",
+      "detail": "剩余 0 个"
+    }
+  ],
+  "checks": [
+    {
+      "name": "插件清单可被 AGH 解析",
+      "ok": true,
+      "detail": "解析出 1 条声明"
+    },
+    {
+      "name": "声明了扩展入口导出名",
+      "ok": true,
+      "detail": "export=vericitePlugin"
+    },
+    {
+      "name": "声明了插件 id",
+      "ok": true,
+      "detail": "id=ext:vericite/provenance"
+    },
+    {
+      "name": "声明了 extension 注入依赖",
+      "ok": true,
+      "detail": "inject=[\"extension\"]"
+    },
+    {
+      "name": "清单声明的导出在模块中真实存在",
+      "ok": true,
+      "detail": "typeof=function"
+    },
+    {
+      "name": "模块导出与静态声明的注入依赖一致",
+      "ok": true,
+      "detail": "module=[\"extension\"] / manifest=[\"extension\"]"
+    },
+    {
+      "name": "插件在 AGH 的 Cordis 运行时中装载成功",
+      "ok": true,
+      "detail": "工具数=8"
+    },
+    {
+      "name": "注册了预期数量的工具",
+      "ok": true,
+      "detail": "实际 8 个：vericite_corpus_overview, vericite_search, vericite_fetch_span, vericite_verify_claim, vericite_check_quote, vericite_split_claims, vericite_audit, vericite_error_catalog"
+    },
+    {
+      "name": "注册了 session_start 观察钩子",
+      "ok": true,
+      "detail": "session_start"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_corpus_overview",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_corpus_overview",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_search",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_search",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_fetch_span",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_fetch_span",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_verify_claim",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_verify_claim",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_check_quote",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_check_quote",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_split_claims",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_split_claims",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_audit",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_audit",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具定义通过 AGH 校验：vericite_error_catalog",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "工具元数据通过 AGH 校验：vericite_error_catalog",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_search 接受 {\"query\":\"幻觉 归因\"}",
+      "ok": true,
+      "detail": "expected=true actual=true"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_search 拒绝 {}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_search 拒绝 {\"query\":\"x\",\"extra\":1}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_search 拒绝 {\"query\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_search 拒绝 {\"query\":42}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_verify_claim 接受 {\"claim\":\"RAG 能降低幻觉\"}",
+      "ok": true,
+      "detail": "expected=true actual=true"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_verify_claim 拒绝 {\"claim\":\"x\",\"k\":999}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_fetch_span 接受 {\"span_id\":\"arxiv:2305.00001::100-200\"}",
+      "ok": true,
+      "detail": "expected=true actual=true"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_fetch_span 拒绝 {}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_audit 接受 {\"text\":\"测试文本。\",\"k\":8}",
+      "ok": true,
+      "detail": "expected=true actual=true"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_audit 拒绝 {\"text\":\"测试文本。\",\"model_verdicts\":[{\"claim_id\":\"C001\"}]}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_split_claims 接受 {\"text\":\"一句话。\"}",
+      "ok": true,
+      "detail": "expected=true actual=true"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_split_claims 拒绝 {\"text\":1}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_error_catalog 接受 {}",
+      "ok": true,
+      "detail": "expected=true actual=true"
+    },
+    {
+      "name": "参数校验（AGH validateAgainst）vericite_error_catalog 拒绝 {\"unexpected\":true}",
+      "ok": true,
+      "detail": "expected=false actual=false"
+    },
+    {
+      "name": "语料边界工具返回语料指纹",
+      "ok": true,
+      "detail": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3"
+    },
+    {
+      "name": "检索步骤返回带 span_id 的候选证据",
+      "ok": true,
+      "detail": "6 条"
+    },
+    {
+      "name": "取回的原文与语料切片逐字一致（可回溯）",
+      "ok": true,
+      "detail": "verbatim_matches=true"
+    },
+    {
+      "name": "规划步骤拆出可核查主张",
+      "ok": true,
+      "detail": "1 条"
+    },
+    {
+      "name": "确定性核验给出判定与指标",
+      "ok": true,
+      "detail": "supported"
+    },
+    {
+      "name": "引文失真被检出",
+      "ok": true,
+      "detail": "similarity=0"
+    },
+    {
+      "name": "无依据的结论被拒绝输出",
+      "ok": true,
+      "detail": "decision=REFUSE"
+    },
+    {
+      "name": "拒绝时给出结构化错误码",
+      "ok": true,
+      "detail": "E_UNSUPPORTED_NUMERIC"
+    },
+    {
+      "name": "拒绝时不产生对外结论",
+      "ok": true,
+      "detail": "output.kind=refusal"
+    },
+    {
+      "name": "错误码字典可被查询",
+      "ok": true,
+      "detail": "17 条"
+    },
+    {
+      "name": "有原文依据的结论被放行且逐条附带引用",
+      "ok": true,
+      "detail": "kind=verified_summary citations=2"
+    },
+    {
+      "name": "卸载后工具随 fiber 一并回收（无残留能力）",
+      "ok": true,
+      "detail": "剩余 0 个"
+    },
+    {
+      "name": "插件可在一个全新的 Cordis 上下文中重新装载",
+      "ok": true,
+      "detail": "二次装载工具数=8"
+    },
+    {
+      "name": "两次装载注册的工具集合完全一致（装载行为可复现）",
+      "ok": true,
+      "detail": "第一次与第二次注册的工具名一致"
+    },
+    {
+      "name": "二次装载的 fiber 同样能干净卸载",
+      "ok": true,
+      "detail": "剩余 0 个"
+    }
+  ],
+  "summary": {
+    "checks_passed": 55,
+    "checks_total": 55,
+    "ledger_entries": 87
+  }
+}

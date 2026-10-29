@@ -1,0 +1,918 @@
+{
+  "vericite_version": "1.0.0",
+  "decision": "REFUSE",
+  "input_text": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+  "corpus": {
+    "corpus_id": "vericite-corpus-v1",
+    "doc_count": 32,
+    "span_count": 26092,
+    "content_sha256": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3"
+  },
+  "summary": {
+    "sentences": 2,
+    "atomic_claims": 2,
+    "supported": 0,
+    "contradicted": 0,
+    "insufficient": 2,
+    "grounding_rate": 0,
+    "elapsed_ms": 33
+  },
+  "claims": [
+    {
+      "claim_id": "C001",
+      "claim": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。",
+      "char_range": [
+        0,
+        32
+      ],
+      "split_from": null,
+      "verdict": "insufficient",
+      "confidence": 0.3245,
+      "evidence_for_claim": [
+        {
+          "span_id": "arxiv:2503.03149::933-1111",
+          "doc_id": "arxiv:2503.03149",
+          "doc_title": "DSVD: Dynamic Self-Verify Decoding for Faithful Generation in Large Language Models",
+          "year": 2025,
+          "section": "DSVD: Dynamic Self-Verify Decoding for Faithful Generation in Large Language Models",
+          "char_range": [
+            933,
+            1111
+          ],
+          "text": "The reliability of large language models remains a critical challenge, particularly due to their susceptibility to hallucinations and factual inaccuracies during text generation.",
+          "verdict": "insufficient",
+          "coverage": 0.5408,
+          "bm25": 37.0902,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2403.18802::769-911",
+          "doc_id": "arxiv:2403.18802",
+          "doc_title": "Long-form factuality in large language models",
+          "year": 2024,
+          "section": "Long-form factuality in large language models",
+          "char_range": [
+            769,
+            911
+          ],
+          "text": "Large language models (LLMs) often generate content that contains factual errors when responding to fact-seeking prompts on open-ended topics.",
+          "verdict": "insufficient",
+          "coverage": 0.4364,
+          "bm25": 34.2668,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2407.04046::35454-35642",
+          "doc_id": "arxiv:2407.04046",
+          "doc_title": "Systematic Task Exploration with LLMs: A Study in Citation Text Generation",
+          "year": 2024,
+          "section": "Qualitative observations.",
+          "char_range": [
+            35454,
+            35642
+          ],
+          "text": "Uninformative abstracts were also hard to generate from, both for humans (who wrote short and uninformative citation texts in response) and for LLMs (that were forced to hallucinate text).",
+          "verdict": "insufficient",
+          "coverage": 0.4002,
+          "bm25": 34.2041,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2401.00396::733-861",
+          "doc_id": "arxiv:2401.00396",
+          "doc_title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "year": 2023,
+          "section": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "char_range": [
+            733,
+            861
+          ],
+          "text": "Retrieval-augmented generation (RAG) has become a main technique for alleviating hallucinations in large language models (LLMs).",
+          "verdict": "insufficient",
+          "coverage": 0.3666,
+          "bm25": 36.5332,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2211.08412::551-690",
+          "doc_id": "arxiv:2211.08412",
+          "doc_title": "Evaluating the Factual Consistency of Large Language Models Through News Summarization",
+          "year": 2022,
+          "section": "Evaluating the Factual Consistency of Large Language Models Through News Summarization",
+          "char_range": [
+            551,
+            690
+          ],
+          "text": "While large language models (LLMs) have proven to be effective on a large variety of tasks, they are also known to hallucinate information.",
+          "verdict": "insufficient",
+          "coverage": 0.291,
+          "bm25": 35.9241,
+          "cross_lingual": true,
+          "role": "candidate"
+        }
+      ],
+      "primary_evidence": {
+        "span_id": "arxiv:2503.03149::933-1111",
+        "doc_id": "arxiv:2503.03149",
+        "doc_title": "DSVD: Dynamic Self-Verify Decoding for Faithful Generation in Large Language Models",
+        "abs_url": "https://arxiv.org/abs/2503.03149",
+        "char_range": [
+          933,
+          1111
+        ],
+        "text": "The reliability of large language models remains a critical challenge, particularly due to their susceptibility to hallucinations and factual inaccuracies during text generation."
+      },
+      "errors": [
+        {
+          "code": "E_INSUFFICIENT_EVIDENCE",
+          "severity": "fatal",
+          "stage": "verification",
+          "meaning": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+          "handling": "拒绝输出该主张，返回候选片段供人工判断。",
+          "message": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+          "detail": {
+            "query": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。",
+            "retrieval_query": "large language model large language models LLM LLMs 在 generation generate generated text texts 时会 produces generate generates yields produce factuality factual fact facts 错误，这类错误通常被称为 hallucination hallucinations hallucinate 。",
+            "best_coverage": 0.5408,
+            "threshold": 0.62,
+            "best_span_id": "arxiv:2503.03149::933-1111",
+            "best_span_text": "The reliability of large language models remains a critical challenge, particularly due to their susceptibility to hallucinations and factual inaccuracies during text generation.",
+            "unmatched_concepts": [
+              "产生",
+              "错误",
+              "这类错误通常被称为"
+            ]
+          }
+        },
+        {
+          "code": "E_MODEL_CONFLICT",
+          "severity": "degrade",
+          "stage": "verification",
+          "meaning": "确定性核验通道与 Agnes 模型判定通道结论不一致。",
+          "handling": "不放行也不否决，标记为「需人工复核」并双通道留痕。",
+          "message": "确定性核验通道与 Agnes 模型判定通道结论不一致。",
+          "detail": {
+            "claim_id": "C001",
+            "deterministic_verdict": "insufficient",
+            "model_verdict": "supported",
+            "model_reason": "证据片段明确指出大型语言模型在文本生成期间易受幻觉和事实不准确性的影响，直接支持了该主张。",
+            "resolution": "模型认为可放行，但确定性通道已否决；按规则不放行，升级人工复核。"
+          }
+        }
+      ],
+      "metrics": {
+        "retrieval": {
+          "query": "large language model large language models LLM LLMs 在 generation generate generated text texts 时会 produces generate generates yields produce factuality factual fact facts 错误，这类错误通常被称为 hallucination hallucinations hallucinate 。",
+          "original_query": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。",
+          "hits": 8,
+          "top_bm25": 37.0902
+        },
+        "coverage": 0.5408,
+        "numeric_score": 1,
+        "cross_lingual": true,
+        "bridge_ratio": 1,
+        "unmatched_concepts": [
+          "产生",
+          "错误",
+          "这类错误通常被称为"
+        ],
+        "retrieval_query": "large language model large language models LLM LLMs 在 generation generate generated text texts 时会 produces generate generates yields produce factuality factual fact facts 错误，这类错误通常被称为 hallucination hallucinations hallucinate 。",
+        "thresholds": {
+          "SUPPORT_COVERAGE": 0.62,
+          "NO_EVIDENCE_COVERAGE": 0.24,
+          "CONTRADICTION_MIN_COVERAGE": 0.5,
+          "NUMERIC_RELEVANCE": 0.3,
+          "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+          "QUOTE_NORM_TOLERANCE": 0.06,
+          "MIN_BRIDGE_RATIO": 0.5
+        }
+      },
+      "final_verdict": "insufficient",
+      "consensus": "disagree",
+      "model_verdict": {
+        "claim_id": "C001",
+        "verdict": "supported",
+        "reason": "证据片段明确指出大型语言模型在文本生成期间易受幻觉和事实不准确性的影响，直接支持了该主张。"
+      }
+    },
+    {
+      "claim_id": "C002",
+      "claim": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+      "char_range": [
+        32,
+        60
+      ],
+      "split_from": null,
+      "verdict": "insufficient",
+      "confidence": 0.1976,
+      "evidence_for_claim": [
+        {
+          "span_id": "arxiv:2507.04026::13389-13584",
+          "doc_id": "arxiv:2507.04026",
+          "doc_title": "Patient-Centered RAG for Oncology Visit Aid Following the Ottawa Decision Guide",
+          "year": 2025,
+          "section": "4.1 Evaluation Overview",
+          "char_range": [
+            13389,
+            13584
+          ],
+          "text": "Visit Question Generation: Users indicate which of the five “know-them” questions improve their understanding, and which of the five “ask-them” questions they would consider bringing to a doctor.",
+          "verdict": "insufficient",
+          "coverage": 0.3293,
+          "bm25": 27.6315,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2502.10003::30798-30993",
+          "doc_id": "arxiv:2502.10003",
+          "doc_title": "SciClaimHunt: A Large Dataset for Evidence-based Scientific Claim Verification",
+          "year": 2025,
+          "section": "V-A Experimental Setups",
+          "char_range": [
+            30798,
+            30993
+          ],
+          "text": "ER refers to the Evidence Retrieval approach, RAG stands for the Retrieval Augmented Generation approach, and FRP indicates the approach where models consider the Full Research Paper as evidence.",
+          "verdict": "insufficient",
+          "coverage": 0.3092,
+          "bm25": 38.0891,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2502.10003::20063-20197",
+          "doc_id": "arxiv:2502.10003",
+          "doc_title": "SciClaimHunt: A Large Dataset for Evidence-based Scientific Claim Verification",
+          "year": 2025,
+          "section": "IV-B Retrieval-Augmented Generation (RAG) Approach",
+          "char_range": [
+            20063,
+            20197
+          ],
+          "text": "Motivated by the above limitation, this study adopts a Retrieval-Augmented Generation (RAG) approach for scientific claim validations.",
+          "verdict": "insufficient",
+          "coverage": 0.3092,
+          "bm25": 30.1183,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2503.07937::8694-8746",
+          "doc_id": "arxiv:2503.07937",
+          "doc_title": "LLM-based Corroborating and Refuting Evidence Retrieval for Scientific Claim Verification",
+          "year": 2025,
+          "section": "Research Questions",
+          "char_range": [
+            8694,
+            8746
+          ],
+          "text": "In this study, we focus on three research questions:",
+          "verdict": "insufficient",
+          "coverage": 0.2413,
+          "bm25": 28.6829,
+          "cross_lingual": true,
+          "role": "candidate"
+        },
+        {
+          "span_id": "arxiv:2510.07238::3277-3325",
+          "doc_id": "arxiv:2510.07238",
+          "doc_title": "When Benchmarks Age: Temporal Misalignment through Large Language Model Factuality Evaluation",
+          "year": 2025,
+          "section": "1 Introduction",
+          "char_range": [
+            3277,
+            3325
+          ],
+          "text": "Our study focuses on two key research questions:",
+          "verdict": "insufficient",
+          "coverage": 0.2413,
+          "bm25": 27.1114,
+          "cross_lingual": true,
+          "role": "candidate"
+        }
+      ],
+      "primary_evidence": {
+        "span_id": "arxiv:2507.04026::13389-13584",
+        "doc_id": "arxiv:2507.04026",
+        "doc_title": "Patient-Centered RAG for Oncology Visit Aid Following the Ottawa Decision Guide",
+        "abs_url": "https://arxiv.org/abs/2507.04026",
+        "char_range": [
+          13389,
+          13584
+        ],
+        "text": "Visit Question Generation: Users indicate which of the five “know-them” questions improve their understanding, and which of the five “ask-them” questions they would consider bringing to a doctor."
+      },
+      "errors": [
+        {
+          "code": "E_INSUFFICIENT_EVIDENCE",
+          "severity": "fatal",
+          "stage": "verification",
+          "meaning": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+          "handling": "拒绝输出该主张，返回候选片段供人工判断。",
+          "message": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+          "detail": {
+            "query": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+            "retrieval_query": "study studies research indicates indicate shows suggests demonstrates ， retrieval-augmented generation retrieval augmented generation RAG 通过引入外部知识 can may is able to mitigate mitigates mitigation alleviate 这一 question questions problem problems 。",
+            "best_coverage": 0.3293,
+            "threshold": 0.62,
+            "best_span_id": "arxiv:2507.04026::13389-13584",
+            "best_span_text": "Visit Question Generation: Users indicate which of the five “know-them” questions improve their understanding, and which of the five “ask-them” questions they would consider bringing to a doctor.",
+            "unmatched_concepts": [
+              "研究",
+              "通过引入外部知识",
+              "可以",
+              "缓解"
+            ]
+          }
+        }
+      ],
+      "metrics": {
+        "retrieval": {
+          "query": "study studies research indicates indicate shows suggests demonstrates ， retrieval-augmented generation retrieval augmented generation RAG 通过引入外部知识 can may is able to mitigate mitigates mitigation alleviate 这一 question questions problem problems 。",
+          "original_query": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+          "hits": 8,
+          "top_bm25": 27.6315
+        },
+        "coverage": 0.3293,
+        "numeric_score": 1,
+        "cross_lingual": true,
+        "bridge_ratio": 1,
+        "unmatched_concepts": [
+          "研究",
+          "通过引入外部知识",
+          "可以",
+          "缓解"
+        ],
+        "retrieval_query": "study studies research indicates indicate shows suggests demonstrates ， retrieval-augmented generation retrieval augmented generation RAG 通过引入外部知识 can may is able to mitigate mitigates mitigation alleviate 这一 question questions problem problems 。",
+        "thresholds": {
+          "SUPPORT_COVERAGE": 0.62,
+          "NO_EVIDENCE_COVERAGE": 0.24,
+          "CONTRADICTION_MIN_COVERAGE": 0.5,
+          "NUMERIC_RELEVANCE": 0.3,
+          "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+          "QUOTE_NORM_TOLERANCE": 0.06,
+          "MIN_BRIDGE_RATIO": 0.5
+        }
+      },
+      "final_verdict": "insufficient",
+      "consensus": "agree",
+      "model_verdict": {
+        "claim_id": "C002",
+        "verdict": "insufficient",
+        "reason": "证据片段讨论的是用户问题生成和理解，未提及检索增强生成（RAG）或外部知识缓解幻觉，无法支撑该主张。"
+      }
+    }
+  ],
+  "non_claim_sentences": [],
+  "quote_checks": [],
+  "errors": [
+    {
+      "code": "E_INSUFFICIENT_EVIDENCE",
+      "severity": "fatal",
+      "stage": "verification",
+      "meaning": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+      "handling": "拒绝输出该主张，返回候选片段供人工判断。",
+      "message": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+      "detail": {
+        "query": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。",
+        "retrieval_query": "large language model large language models LLM LLMs 在 generation generate generated text texts 时会 produces generate generates yields produce factuality factual fact facts 错误，这类错误通常被称为 hallucination hallucinations hallucinate 。",
+        "best_coverage": 0.5408,
+        "threshold": 0.62,
+        "best_span_id": "arxiv:2503.03149::933-1111",
+        "best_span_text": "The reliability of large language models remains a critical challenge, particularly due to their susceptibility to hallucinations and factual inaccuracies during text generation.",
+        "unmatched_concepts": [
+          "产生",
+          "错误",
+          "这类错误通常被称为"
+        ]
+      }
+    },
+    {
+      "code": "E_INSUFFICIENT_EVIDENCE",
+      "severity": "fatal",
+      "stage": "verification",
+      "meaning": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+      "handling": "拒绝输出该主张，返回候选片段供人工判断。",
+      "message": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+      "detail": {
+        "query": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+        "retrieval_query": "study studies research indicates indicate shows suggests demonstrates ， retrieval-augmented generation retrieval augmented generation RAG 通过引入外部知识 can may is able to mitigate mitigates mitigation alleviate 这一 question questions problem problems 。",
+        "best_coverage": 0.3293,
+        "threshold": 0.62,
+        "best_span_id": "arxiv:2507.04026::13389-13584",
+        "best_span_text": "Visit Question Generation: Users indicate which of the five “know-them” questions improve their understanding, and which of the five “ask-them” questions they would consider bringing to a doctor.",
+        "unmatched_concepts": [
+          "研究",
+          "通过引入外部知识",
+          "可以",
+          "缓解"
+        ]
+      }
+    },
+    {
+      "code": "E_MODEL_CONFLICT",
+      "severity": "degrade",
+      "stage": "verification",
+      "meaning": "确定性核验通道与 Agnes 模型判定通道结论不一致。",
+      "handling": "不放行也不否决，标记为「需人工复核」并双通道留痕。",
+      "message": "确定性核验通道与 Agnes 模型判定通道结论不一致。",
+      "detail": {
+        "claim_id": "C001",
+        "deterministic_verdict": "insufficient",
+        "model_verdict": "supported",
+        "model_reason": "证据片段明确指出大型语言模型在文本生成期间易受幻觉和事实不准确性的影响，直接支持了该主张。",
+        "resolution": "模型认为可放行，但确定性通道已否决；按规则不放行，升级人工复核。"
+      }
+    }
+  ],
+  "error_codes": [
+    "E_INSUFFICIENT_EVIDENCE",
+    "E_MODEL_CONFLICT"
+  ],
+  "ledger": [
+    {
+      "ts": "2026-10-03T23:55:40.496Z",
+      "seq": 1,
+      "stage": "tool_call",
+      "action": "agnes_model_channel_request",
+      "model": "agnes-3.0-flash",
+      "base_url": "https://api.agnes-ai.cn/v1",
+      "claims": 2
+    },
+    {
+      "ts": "2026-10-03T23:55:40.496Z",
+      "seq": 2,
+      "stage": "tool_result",
+      "action": "agnes_model_channel_response",
+      "verdicts": [
+        {
+          "claim_id": "C001",
+          "verdict": "supported",
+          "reason": "证据片段明确指出大型语言模型在文本生成期间易受幻觉和事实不准确性的影响，直接支持了该主张。"
+        },
+        {
+          "claim_id": "C002",
+          "verdict": "insufficient",
+          "reason": "证据片段讨论的是用户问题生成和理解，未提及检索增强生成（RAG）或外部知识缓解幻觉，无法支撑该主张。"
+        }
+      ],
+      "latency_ms": 4010,
+      "usage": {
+        "prompt_tokens": 350,
+        "completion_tokens": 91
+      }
+    },
+    {
+      "ts": "2026-10-03T23:55:40.496Z",
+      "seq": 3,
+      "stage": "plan",
+      "action": "audit_start",
+      "input_chars": 60
+    },
+    {
+      "ts": "2026-10-03T23:55:40.496Z",
+      "seq": 4,
+      "stage": "plan",
+      "action": "corpus_loaded",
+      "corpus_id": "vericite-corpus-v1",
+      "doc_count": 32,
+      "content_sha256": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3",
+      "span_count": 26092
+    },
+    {
+      "ts": "2026-10-03T23:55:40.496Z",
+      "seq": 5,
+      "stage": "plan",
+      "action": "claim_decomposition",
+      "total_sentences": 2,
+      "atomic_claims": 2,
+      "splits": 0
+    },
+    {
+      "ts": "2026-10-03T23:55:40.496Z",
+      "seq": 6,
+      "stage": "plan",
+      "action": "language_detected",
+      "dominant": "zh"
+    },
+    {
+      "ts": "2026-10-03T23:55:40.496Z",
+      "seq": 7,
+      "stage": "tool_call",
+      "action": "vericite_claim_search",
+      "claim_id": "C001",
+      "query": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。"
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 8,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "retrieve",
+      "query": "large language model large language models LLM LLMs 在 generation generate generated text texts 时会 produces generate generates yields produce factuality factual fact facts 错误，这类错误通常被称为 hallucination hallucinations hallucinate 。",
+      "hits": 8,
+      "reason": "ok",
+      "original_query": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。",
+      "bridged": true
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 9,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2503.03149::933-1111",
+      "coverage": 0.5408,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 10,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::733-861",
+      "coverage": 0.3666,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 11,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2211.08412::551-690",
+      "coverage": 0.291,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 12,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2312.14504::1895-1948",
+      "coverage": 0.291,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 13,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::769-911",
+      "coverage": 0.4364,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 14,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2407.04046::35454-35642",
+      "coverage": 0.4002,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 15,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2403.18802::263-308",
+      "coverage": 0.2507,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 16,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "score_span",
+      "span_id": "arxiv:2401.00396::7608-7650",
+      "coverage": 0.291,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 17,
+      "stage": "tool_result",
+      "claim_id": "C001",
+      "step": "aggregate",
+      "verdict": "insufficient",
+      "confidence": 0.3245,
+      "quarantined_spans": 0,
+      "polarity_conflicts": 0,
+      "numeric_substitution": false,
+      "unsatisfied_quantities": 0,
+      "relevant_spans": 4
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 18,
+      "stage": "verify",
+      "action": "claim_verified",
+      "claim_id": "C001",
+      "verdict": "insufficient",
+      "confidence": 0.3245,
+      "primary_span": "arxiv:2503.03149::933-1111",
+      "error_codes": [
+        "E_INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "ts": "2026-10-03T23:55:40.519Z",
+      "seq": 19,
+      "stage": "tool_call",
+      "action": "vericite_claim_search",
+      "claim_id": "C002",
+      "query": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。"
+    },
+    {
+      "ts": "2026-10-03T23:55:40.528Z",
+      "seq": 20,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "retrieve",
+      "query": "study studies research indicates indicate shows suggests demonstrates ， retrieval-augmented generation retrieval augmented generation RAG 通过引入外部知识 can may is able to mitigate mitigates mitigation alleviate 这一 question questions problem problems 。",
+      "hits": 8,
+      "reason": "ok",
+      "original_query": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+      "bridged": true
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 21,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2502.10003::30798-30993",
+      "coverage": 0.3092,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 22,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2502.10003::19744-19794",
+      "coverage": 0.1986,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 23,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2502.10003::20063-20197",
+      "coverage": 0.3092,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 24,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2406.13692::9788-9859",
+      "coverage": 0.1986,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 25,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2607.01852::1771-1844",
+      "coverage": 0.1986,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 26,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2503.07937::8694-8746",
+      "coverage": 0.2413,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 27,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2507.04026::13389-13584",
+      "coverage": 0.3293,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 28,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "score_span",
+      "span_id": "arxiv:2510.07238::3277-3325",
+      "coverage": 0.2413,
+      "polarity_differs": false,
+      "overclaim": false,
+      "cross_lingual": true,
+      "bridge_ratio": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 29,
+      "stage": "tool_result",
+      "claim_id": "C002",
+      "step": "aggregate",
+      "verdict": "insufficient",
+      "confidence": 0.1976,
+      "quarantined_spans": 0,
+      "polarity_conflicts": 0,
+      "numeric_substitution": false,
+      "unsatisfied_quantities": 0,
+      "relevant_spans": 3
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 30,
+      "stage": "verify",
+      "action": "claim_verified",
+      "claim_id": "C002",
+      "verdict": "insufficient",
+      "confidence": 0.1976,
+      "primary_span": "arxiv:2507.04026::13389-13584",
+      "error_codes": [
+        "E_INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 31,
+      "stage": "verify",
+      "action": "dual_channel_adjudicated",
+      "model_opinions": 2,
+      "agreements": 1,
+      "disagreements": 1
+    },
+    {
+      "ts": "2026-10-03T23:55:40.529Z",
+      "seq": 32,
+      "stage": "exception",
+      "action": "decision",
+      "decision": "REFUSE",
+      "fatal": 2,
+      "degrade": 1,
+      "unsupported_claims": 2
+    }
+  ],
+  "output": {
+    "kind": "refusal",
+    "reason": "存在无法用原文依据支撑的主张，系统拒绝输出结论。",
+    "blocking_errors": [
+      {
+        "code": "E_INSUFFICIENT_EVIDENCE",
+        "message": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+        "detail": {
+          "query": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。",
+          "retrieval_query": "large language model large language models LLM LLMs 在 generation generate generated text texts 时会 produces generate generates yields produce factuality factual fact facts 错误，这类错误通常被称为 hallucination hallucinations hallucinate 。",
+          "best_coverage": 0.5408,
+          "threshold": 0.62,
+          "best_span_id": "arxiv:2503.03149::933-1111",
+          "best_span_text": "The reliability of large language models remains a critical challenge, particularly due to their susceptibility to hallucinations and factual inaccuracies during text generation.",
+          "unmatched_concepts": [
+            "产生",
+            "错误",
+            "这类错误通常被称为"
+          ]
+        }
+      },
+      {
+        "code": "E_INSUFFICIENT_EVIDENCE",
+        "message": "存在弱相关片段，但其内容不足以支撑该主张的语义强度。",
+        "detail": {
+          "query": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+          "retrieval_query": "study studies research indicates indicate shows suggests demonstrates ， retrieval-augmented generation retrieval augmented generation RAG 通过引入外部知识 can may is able to mitigate mitigates mitigation alleviate 这一 question questions problem problems 。",
+          "best_coverage": 0.3293,
+          "threshold": 0.62,
+          "best_span_id": "arxiv:2507.04026::13389-13584",
+          "best_span_text": "Visit Question Generation: Users indicate which of the five “know-them” questions improve their understanding, and which of the five “ask-them” questions they would consider bringing to a doctor.",
+          "unmatched_concepts": [
+            "研究",
+            "通过引入外部知识",
+            "可以",
+            "缓解"
+          ]
+        }
+      },
+      {
+        "code": "E_MODEL_CONFLICT",
+        "message": "确定性核验通道与 Agnes 模型判定通道结论不一致。",
+        "detail": {
+          "claim_id": "C001",
+          "deterministic_verdict": "insufficient",
+          "model_verdict": "supported",
+          "model_reason": "证据片段明确指出大型语言模型在文本生成期间易受幻觉和事实不准确性的影响，直接支持了该主张。",
+          "resolution": "模型认为可放行，但确定性通道已否决；按规则不放行，升级人工复核。"
+        }
+      }
+    ],
+    "unsupported_claims": [
+      {
+        "claim_id": "C001",
+        "claim": "大语言模型在生成文本时会产生事实性错误，这类错误通常被称为幻觉。",
+        "verdict": "insufficient",
+        "error_codes": [
+          "E_INSUFFICIENT_EVIDENCE",
+          "E_MODEL_CONFLICT"
+        ]
+      },
+      {
+        "claim_id": "C002",
+        "claim": "研究表明，检索增强生成通过引入外部知识可以缓解这一问题。",
+        "verdict": "insufficient",
+        "error_codes": [
+          "E_INSUFFICIENT_EVIDENCE"
+        ]
+      }
+    ]
+  },
+  "thresholds": {
+    "SUPPORT_COVERAGE": 0.62,
+    "NO_EVIDENCE_COVERAGE": 0.24,
+    "CONTRADICTION_MIN_COVERAGE": 0.5,
+    "NUMERIC_RELEVANCE": 0.3,
+    "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+    "QUOTE_NORM_TOLERANCE": 0.06,
+    "MIN_BRIDGE_RATIO": 0.5
+  },
+  "model_channel": {
+    "enabled": true,
+    "model": "agnes-3.0-flash",
+    "base_url": "https://api.agnes-ai.cn/v1",
+    "requested_claims": 2,
+    "latency_ms": 4010,
+    "prompt_tokens": 350,
+    "completion_tokens": 91,
+    "returned": 2,
+    "dropped": [],
+    "error": null,
+    "verdict_count": 2
+  }
+}

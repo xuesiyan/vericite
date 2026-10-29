@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 900" width="1180" height="900" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#b91c1c"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <rect width="1180" height="900" fill="#ffffff"/>
+
+  <text x="40" y="46" font-size="26" font-weight="700" fill="#0f172a">VeriCite 系统架构</text>
+  <text x="40" y="72" font-size="14" fill="#64748b">科研文献溯源核查智能体 · AGH 运行底座 · 确定性核验通道</text>
+
+  <!-- ============ AGH 层 ============ -->
+  <rect x="40" y="98" width="1100" height="132" rx="12" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
+  <text x="62" y="126" font-size="14" font-weight="700" fill="#3730a3">AGH · Agnes Harness（赛事强制运行底座）</text>
+
+  <rect x="62" y="140" width="248" height="70" rx="8" fill="#ffffff" stroke="#a5b4fc"/>
+  <text x="78" y="166" font-size="13" font-weight="600" fill="#1e293b">agent loop</text>
+  <text x="78" y="186" font-size="11.5" fill="#64748b">会话 · 工具调度 · 权限</text>
+  <text x="78" y="202" font-size="11.5" fill="#64748b">Agnes 模型（唯一允许的模型）</text>
+
+  <rect x="326" y="140" width="248" height="70" rx="8" fill="#ffffff" stroke="#a5b4fc"/>
+  <text x="342" y="166" font-size="13" font-weight="600" fill="#1e293b">工具注册表 / 行扩展 API</text>
+  <text x="342" y="186" font-size="11.5" fill="#64748b">registerTool · checkToolDef</text>
+  <text x="342" y="202" font-size="11.5" fill="#64748b">TypeBox schema · 参数校验</text>
+
+  <rect x="590" y="140" width="248" height="70" rx="8" fill="#ffffff" stroke="#a5b4fc"/>
+  <text x="606" y="166" font-size="13" font-weight="600" fill="#1e293b">执行记录 / 事件账本</text>
+  <text x="606" y="186" font-size="11.5" fill="#64748b">plan → tool_call → tool_result</text>
+  <text x="606" y="202" font-size="11.5" fill="#64748b">→ verify → exception</text>
+
+  <rect x="854" y="140" width="264" height="70" rx="8" fill="#ffffff" stroke="#a5b4fc"/>
+  <text x="870" y="166" font-size="13" font-weight="600" fill="#1e293b">Skill 运行时</text>
+  <text x="870" y="186" font-size="11.5" fill="#64748b">.agh/skills/lit-trace/SKILL.md</text>
+  <text x="870" y="202" font-size="11.5" fill="#64748b">任务方法 + 硬性禁令</text>
+
+  <!-- 装载箭头 -->
+  <line x1="450" y1="230" x2="450" y2="262" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="460" y="252" font-size="11" fill="#475569">装载插件（plugins[]）</text>
+  <line x1="986" y1="230" x2="986" y2="262" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="700" y="252" font-size="11" fill="#475569">装载 Skill</text>
+
+  <!-- ============ 接入层 ============ -->
+  <rect x="40" y="268" width="1100" height="106" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="62" y="296" font-size="14" font-weight="700" fill="#166534">vericite 接入层</text>
+
+  <rect x="62" y="310" width="704" height="46" rx="8" fill="#ffffff" stroke="#86efac"/>
+  <text x="78" y="330" font-size="12.5" font-weight="600" fill="#1e293b">AGH 后端插件 · 8 个工具（全部只读 / 闭世界 / 免审批）</text>
+  <text x="78" y="348" font-size="11" fill="#475569">corpus_overview · search · fetch_span · verify_claim · check_quote · split_claims · audit · error_catalog</text>
+
+  <rect x="782" y="310" width="336" height="46" rx="8" fill="#ffffff" stroke="#86efac"/>
+  <text x="798" y="330" font-size="12.5" font-weight="600" fill="#1e293b">AGH Skill · lit-trace</text>
+  <text x="798" y="348" font-size="11" fill="#475569">四阶段闭环操作规程 + 输出契约</text>
+
+  <line x1="590" y1="374" x2="590" y2="404" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ============ 内核层 ============ -->
+  <rect x="40" y="410" width="1100" height="196" rx="12" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+  <text x="62" y="438" font-size="14" font-weight="700" fill="#9a3412">核验内核 · 纯算法（同输入必得同输出，无随机性）</text>
+
+  <rect x="62" y="452" width="340" height="60" rx="8" fill="#ffffff" stroke="#fdba74"/>
+  <text x="78" y="474" font-size="12.5" font-weight="600" fill="#1e293b">audit.mjs · 闭环编排</text>
+  <text x="78" y="494" font-size="11" fill="#475569">主张拆解 · 非对称仲裁 · 裁决契约</text>
+
+  <rect x="418" y="452" width="340" height="60" rx="8" fill="#ffffff" stroke="#fdba74"/>
+  <text x="434" y="474" font-size="12.5" font-weight="600" fill="#1e293b">verify.mjs · 判定原则 P1–P4</text>
+  <text x="434" y="494" font-size="11" fill="#475569">覆盖率 · 数值 · 极性 · 强度 · 实体 · 注入 · 引文</text>
+
+  <rect x="774" y="452" width="344" height="60" rx="8" fill="#ffffff" stroke="#fdba74"/>
+  <text x="790" y="474" font-size="12.5" font-weight="600" fill="#1e293b">lexicon.mjs · 中英术语桥</text>
+  <text x="790" y="494" font-size="11" fill="#475569">受控双语映射（含保真度门槛）</text>
+
+  <rect x="62" y="524" width="340" height="60" rx="8" fill="#ffffff" stroke="#fdba74"/>
+  <text x="78" y="546" font-size="12.5" font-weight="600" fill="#1e293b">corpus.mjs · 检索与索引</text>
+  <text x="78" y="566" font-size="11" fill="#475569">BM25 · 倒排索引 · span 索引 · 可引用过滤</text>
+
+  <rect x="418" y="524" width="340" height="60" rx="8" fill="#ffffff" stroke="#fdba74"/>
+  <text x="434" y="546" font-size="12.5" font-weight="600" fill="#1e293b">text.mjs · 语言处理</text>
+  <text x="434" y="566" font-size="11" fill="#475569">分句（保留偏移）· 分词 · 数值 · 极性 · 强度</text>
+
+  <rect x="774" y="524" width="344" height="60" rx="8" fill="#ffffff" stroke="#fdba74"/>
+  <text x="790" y="546" font-size="12.5" font-weight="600" fill="#1e293b">errors.mjs · 17 个结构化错误码</text>
+  <text x="790" y="566" font-size="11" fill="#475569">severity / stage / meaning / handling</text>
+
+  <line x1="590" y1="606" x2="590" y2="636" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ============ 语料层 ============ -->
+  <rect x="40" y="642" width="1100" height="86" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="62" y="670" font-size="14" font-weight="700" fill="#334155">离线语料库 · 可复现的闭世界</text>
+  <text x="62" y="694" font-size="11.5" fill="#475569">32 篇 arXiv 全文 · 26,092 个证据片段 · 1,999,114 字符 · 词表 22,954 · 主题域：AI 幻觉 / 归因 / 检索增强 / 事实核查</text>
+  <text x="62" y="714" font-size="11.5" fill="#475569">指纹 sha256 1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3</text>
+  <text x="806" y="694" font-size="11.5" fill="#b91c1c">语料之外 = 无依据 → 拒答</text>
+
+  <!-- ============ 输出契约 ============ -->
+  <rect x="40" y="752" width="1100" height="116" rx="12" fill="#fefce8" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="62" y="780" font-size="14" font-weight="700" fill="#854d0e">对外输出契约（不存在"把话说得更委婉以绕过核验"这条路径）</text>
+
+  <rect x="62" y="794" width="340" height="54" rx="8" fill="#ffffff" stroke="#86efac"/>
+  <text x="78" y="814" font-size="12.5" font-weight="700" fill="#15803d">PASS</text>
+  <text x="128" y="814" font-size="11.5" fill="#334155">逐条输出结论，每条附 span_id 引用</text>
+  <text x="78" y="834" font-size="11" fill="#64748b">不得添加任何未被引用的额外结论</text>
+
+  <rect x="418" y="794" width="340" height="54" rx="8" fill="#ffffff" stroke="#fca5a5"/>
+  <text x="434" y="814" font-size="12.5" font-weight="700" fill="#b91c1c">REFUSE</text>
+  <text x="492" y="814" font-size="11.5" fill="#334155">拒绝给出结论</text>
+  <text x="434" y="834" font-size="11" fill="#64748b">如实报告错误码 / handling / 反证原文</text>
+
+  <rect x="774" y="794" width="344" height="54" rx="8" fill="#ffffff" stroke="#fcd34d"/>
+  <text x="790" y="814" font-size="12.5" font-weight="700" fill="#a16207">ESCALATE</text>
+  <text x="862" y="814" font-size="11.5" fill="#334155">不放行也不否决</text>
+  <text x="790" y="834" font-size="11" fill="#64748b">呈现双通道判定与理由，标注"需人工复核"</text>
+</svg>

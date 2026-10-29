@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/CA9VsnYrwudVv+Y3bwD6oGzXJQ8</id>
+  <title>arXiv Query: search_query=abs:"self-verification" AND abs:"language model"&amp;id_list=&amp;start=0&amp;max_results=4</title>
+  <updated>2026-10-03T14:00:03Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22self-verification%22+AND+abs:%22language+model%22&amp;start=0&amp;max_results=4&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>4</opensearch:itemsPerPage>
+  <opensearch:totalResults>155</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2511.15137v1</id>
+    <title>From Solving to Verifying: A Unified Objective for Robust Reasoning in LLMs</title>
+    <updated>2025-11-19T05:27:06Z</updated>
+    <link href="https://arxiv.org/abs/2511.15137v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.15137v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The reasoning capabilities of large language models (LLMs) have been significantly improved through reinforcement learning (RL). Nevertheless, LLMs still struggle to consistently verify their own reasoning traces. This raises the research question of how to enhance the self-verification ability of LLMs and whether such an ability can further improve reasoning performance. In this work, we propose GRPO-Verif, an algorithm that jointly optimizes solution generation and self-verification within a unified loss function, with an adjustable hyperparameter controlling the weight of the verification signal. Experimental results demonstrate that our method enhances self-verification capability while maintaining comparable performance in reasoning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-19T05:27:06Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Xiaoxuan Wang</name>
+    </author>
+    <author>
+      <name>Bo Liu</name>
+    </author>
+    <author>
+      <name>Song Jiang</name>
+    </author>
+    <author>
+      <name>Jingzhou Liu</name>
+    </author>
+    <author>
+      <name>Jingyuan Qi</name>
+    </author>
+    <author>
+      <name>Xia Chen</name>
+    </author>
+    <author>
+      <name>Baosheng He</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.17417v3</id>
+    <title>Aha Moment Revisited: Are VLMs Truly Capable of Self Verification in Inference-time Scaling?</title>
+    <updated>2026-01-06T03:04:42Z</updated>
+    <link href="https://arxiv.org/abs/2506.17417v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.17417v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Inference time techniques such as decoding time scaling and self refinement have been shown to substantially improve mathematical reasoning in large language models (LLMs), largely attributed to emergent self correction and self verification behaviors often elicited through reinforcement learning (RL). In this work, we ask whether the same recipe transfers to vision language models (VLMs), especially RL finetuned variants that claim strong visual mathematical reasoning.
+  Through extensive evaluation, we reach three main findings that differ markedly from text only models. First, generation time capability matters more than verification and refinement: simple majority voting consistently and substantially outperforms verification centric strategies such as best of N with self verification. Second, behaviors often associated with RL tuned models at inference time, such as the 'Aha moment,' do not yield reliable reasoning performance improvements. Third, visual information is not effectively integrated into the model's self verification process.
+  Overall, our analysis highlights a key limitation: current RL trained VLMs derive limited benefit from self verification in the visual modality, which constrains the effectiveness of inference time scaling for visual mathematical reasoning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-20T18:23:48Z</published>
+    <arxiv:comment>Neurips 2025 Multimodal Algorithmic Reasoning Workshop Oral. In submission</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Mingyuan Wu</name>
+    </author>
+    <author>
+      <name>Meitang Li</name>
+    </author>
+    <author>
+      <name>Jingcheng Yang</name>
+    </author>
+    <author>
+      <name>Jize Jiang</name>
+    </author>
+    <author>
+      <name>Kaizhuo Yan</name>
+    </author>
+    <author>
+      <name>Zhaoheng Li</name>
+    </author>
+    <author>
+      <name>Hanchao Yu</name>
+    </author>
+    <author>
+      <name>Minjia Zhang</name>
+    </author>
+    <author>
+      <name>Klara Nahrstedt</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2210.08604v2</id>
+    <title>NormSAGE: Multi-Lingual Multi-Cultural Norm Discovery from Conversations On-the-Fly</title>
+    <updated>2024-01-13T22:46:01Z</updated>
+    <link href="https://arxiv.org/abs/2210.08604v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2210.08604v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Norm discovery is important for understanding and reasoning about the acceptable behaviors and potential violations in human communication and interactions. We introduce NormSage, a framework for addressing the novel task of conversation-grounded multi-lingual, multi-cultural norm discovery, based on language model prompting and self-verification. NormSAGE leverages the expressiveness and implicit knowledge of the pretrained GPT-3 language model backbone, to elicit knowledge about norms through directed questions representing the norm discovery task and conversation context. It further addresses the risk of language model hallucination with a self-verification mechanism ensuring that the norms discovered are correct and are substantially grounded to their source conversations. Evaluation results show that our approach discovers significantly more relevant and insightful norms for conversations on-the-fly compared to baselines (&gt;10+% in Likert scale rating). The norms discovered from Chinese conversation are also comparable to the norms discovered from English conversation in terms of insightfulness and correctness (&lt;3% difference). In addition, the culture-specific norms are promising quality, allowing for 80% accuracy in culture pair human identification. Finally, our grounding process in norm discovery self-verification can be extended for instantiating the adherence and violation of any norm for a given conversation on-the-fly, with explainability and transparency. NormSAGE achieves an AUC of 95.4% in grounding, with natural language explanation matching human-written quality.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-10-16T18:30:05Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yi R. Fung</name>
+    </author>
+    <author>
+      <name>Tuhin Chakraborty</name>
+    </author>
+    <author>
+      <name>Hao Guo</name>
+    </author>
+    <author>
+      <name>Owen Rambow</name>
+    </author>
+    <author>
+      <name>Smaranda Muresan</name>
+    </author>
+    <author>
+      <name>Heng Ji</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.03149v1</id>
+    <title>DSVD: Dynamic Self-Verify Decoding for Faithful Generation in Large Language Models</title>
+    <updated>2025-03-05T03:45:50Z</updated>
+    <link href="https://arxiv.org/abs/2503.03149v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.03149v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The reliability of large language models remains a critical challenge, particularly due to their susceptibility to hallucinations and factual inaccuracies during text generation. Existing solutions either underutilize models' self-correction with preemptive strategies or use costly post-hoc verification. To further explore the potential of real-time self-verification and correction, we present Dynamic Self-Verify Decoding (DSVD), a novel decoding framework that enhances generation reliability through real-time hallucination detection and efficient error correction. DSVD integrates two key components: (1) parallel self-verification architecture for continuous quality assessment, (2) dynamic rollback mechanism for targeted error recovery. Extensive experiments across five benchmarks demonstrate DSVD's effectiveness, achieving significant improvement in truthfulness (Quesetion-Answering) and factual accuracy (FActScore). Results show the DSVD can be further incorporated with existing faithful decoding methods to achieve stronger performance. Our work establishes that real-time self-verification during generation offers a viable path toward more trustworthy language models without sacrificing practical deployability.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-05T03:45:50Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>YiQiu Guo</name>
+    </author>
+    <author>
+      <name>Yuchen Yang</name>
+    </author>
+    <author>
+      <name>Zhe Chen</name>
+    </author>
+    <author>
+      <name>Pingjie Wang</name>
+    </author>
+    <author>
+      <name>Yusheng Liao</name>
+    </author>
+    <author>
+      <name>Ya Zhang</name>
+    </author>
+    <author>
+      <name>Yanfeng Wang</name>
+    </author>
+    <author>
+      <name>Yu Wang</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,14 @@
+{
+  "case_id": "boundary-02-strength-overclaim",
+  "category": "boundary",
+  "title": "强度越权（原文推测「可能」→ 总结断言「已被证实」）",
+  "focus": "证据只支持推测性表述，总结却使用了断言性措辞。概念覆盖率很高，问题不在『说了什么』而在『把话说得多满』，必须与覆盖度分开判定",
+  "input_text": "Claude-3-Haiku 已被证实经过训练以降低其回答中不受支持的事实。",
+  "k": 8,
+  "expect": {
+    "decision": "REFUSE",
+    "error_codes": ["E_STRENGTH_OVERCLAIM"],
+    "min_claims": 1,
+    "max_grounding_rate": 0
+  }
+}

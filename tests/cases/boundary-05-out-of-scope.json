@@ -1,0 +1,14 @@
+{
+  "case_id": "boundary-05-out-of-scope",
+  "category": "boundary",
+  "title": "主张落在语料覆盖范围之外",
+  "focus": "主张本身可能完全成立，但它所依据的文献不在本语料内。系统必须明确拒绝，而不是靠模型参数记忆补一个『听起来合理』的答案——这正是幻觉的主要来源",
+  "input_text": "该文提出了一种基于量子纠缠的文献核查方法，准确率达到 99.7%。",
+  "k": 8,
+  "expect": {
+    "decision": "REFUSE",
+    "error_codes": ["E_UNSUPPORTED_NUMERIC"],
+    "min_claims": 1,
+    "max_grounding_rate": 0
+  }
+}

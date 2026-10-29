@@ -1,0 +1,355 @@
+{
+  "vericite_version": "1.0.0",
+  "generated_at": "2026-10-03T13:43:41.645Z",
+  "generator": "node cli.mjs demo --all",
+  "runtime": {
+    "node": "v24.21.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "corpus": {
+    "corpus_id": "vericite-corpus-v1",
+    "doc_count": 32,
+    "span_count": 26092,
+    "content_sha256": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3"
+  },
+  "thresholds": {
+    "SUPPORT_COVERAGE": 0.62,
+    "NO_EVIDENCE_COVERAGE": 0.24,
+    "CONTRADICTION_MIN_COVERAGE": 0.5,
+    "NUMERIC_RELEVANCE": 0.3,
+    "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+    "QUOTE_NORM_TOLERANCE": 0.06,
+    "MIN_BRIDGE_RATIO": 0.5
+  },
+  "error_catalog": {
+    "E_CORPUS_MISSING": {
+      "severity": "fatal",
+      "stage": "planning",
+      "handling": "立即终止，禁止输出任何结论（不得凭模型先验作答）。"
+    },
+    "E_EMPTY_QUERY": {
+      "severity": "fatal",
+      "stage": "planning",
+      "handling": "终止并要求重新表述核查对象。"
+    },
+    "E_NO_EVIDENCE": {
+      "severity": "fatal",
+      "stage": "retrieval",
+      "handling": "终止该主张，返回「无依据」并附检索式与语料范围说明。"
+    },
+    "E_INSUFFICIENT_EVIDENCE": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出该主张，返回候选片段供人工判断。"
+    },
+    "E_CONTRADICTION": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，并同时给出反证片段引用。"
+    },
+    "E_UNSUPPORTED_NUMERIC": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，列出主张数值与原文数值的差异对照。"
+    },
+    "E_POLARITY_CONFLICT": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，标注极性冲突位置。"
+    },
+    "E_STRENGTH_OVERCLAIM": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝原始表述，要求降级到证据允许的强度后重试。"
+    },
+    "E_ENTITY_MISMATCH": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，列出未获支撑的实体。"
+    },
+    "E_SPAN_NOT_FOUND": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝该引用；计入「引用真实性」指标。"
+    },
+    "E_SPAN_OUT_OF_RANGE": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝该引用；计入「引用真实性」指标。"
+    },
+    "E_QUOTE_MISMATCH": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝该引用；判定为引文失真。"
+    },
+    "E_MODEL_CONFLICT": {
+      "severity": "degrade",
+      "stage": "verification",
+      "handling": "不放行也不否决，标记为「需人工复核」并双通道留痕。"
+    },
+    "E_CLAIM_TOO_LONG": {
+      "severity": "degrade",
+      "stage": "audit",
+      "handling": "拆分后重新核查；未拆分部分不进入结论。"
+    },
+    "E_INJECTION_SUSPECTED": {
+      "severity": "fatal",
+      "stage": "retrieval",
+      "handling": "隔离该片段，不作为证据使用，并在审计记录中标记。"
+    },
+    "E_CROSSLINGUAL_LOW_MAPPING": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "不采信该证据；判定为 insufficient，并提示改用原文语言表述或补充术语映射。"
+    },
+    "E_UNSUPPORTED_LANGUAGE": {
+      "severity": "warn",
+      "stage": "planning",
+      "handling": "继续执行但降低置信度，并在报告显著位置声明。"
+    }
+  },
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "assertions_passed": 4,
+    "assertions_total": 4,
+    "decisions": {
+      "REFUSE": 1
+    },
+    "error_codes_covered": [
+      "E_POLARITY_CONFLICT"
+    ]
+  },
+  "runs": [
+    {
+      "case_id": "boundary-03-polarity-flip",
+      "category": "boundary",
+      "title": "否定极性被反转（「由 GPT-4 生成」→「并非由 GPT-4 生成」）",
+      "focus": "概念覆盖率与正确表述几乎一致，仅在否定词上做了反转。这类改写最隐蔽：逐词看都『对得上』，语义却完全相反。系统必须检出极性冲突并给出反证原文",
+      "expected": {
+        "decision": "REFUSE",
+        "error_codes": [
+          "E_POLARITY_CONFLICT"
+        ],
+        "min_claims": 1,
+        "max_grounding_rate": 0
+      },
+      "passed": true,
+      "corpus_used": "corpus:vericite-corpus-v1",
+      "checks": [
+        {
+          "name": "最终裁决",
+          "ok": true,
+          "detail": "期望 REFUSE，实际 REFUSE"
+        },
+        {
+          "name": "触发错误码 E_POLARITY_CONFLICT",
+          "ok": true,
+          "detail": "已触发"
+        },
+        {
+          "name": "主张数下限",
+          "ok": true,
+          "detail": "期望 ≥1，实际 1"
+        },
+        {
+          "name": "依据覆盖率上限",
+          "ok": true,
+          "detail": "期望 ≤0，实际 0"
+        }
+      ],
+      "decision": "REFUSE",
+      "summary": {
+        "sentences": 1,
+        "atomic_claims": 1,
+        "supported": 0,
+        "contradicted": 1,
+        "insufficient": 0,
+        "grounding_rate": 0,
+        "elapsed_ms": 19
+      },
+      "error_codes": [
+        "E_POLARITY_CONFLICT"
+      ],
+      "errors": [
+        {
+          "code": "E_POLARITY_CONFLICT",
+          "severity": "fatal",
+          "stage": "verification",
+          "meaning": "主张的否定极性与证据相反（如原文说「不能」，主张说「能」）。",
+          "handling": "拒绝输出，标注极性冲突位置。",
+          "message": "主张的否定极性与证据相反（如原文说「不能」，主张说「能」）。",
+          "detail": {
+            "span_id": "arxiv:2403.18802::33242-33346",
+            "claim_polarity": "negated",
+            "evidence_polarity": "affirmed",
+            "claim_negation_cues": [
+              "并非"
+            ],
+            "evidence_negation_cues": [],
+            "coverage": 0.7769,
+            "evidence_text": "To do so, we first used GPT-4 to generate LongFact, a set of 2,280 prompts spanning 38 different topics."
+          }
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "C001",
+          "claim": "LongFact 数据集并非由 GPT-4 生成。",
+          "final_verdict": "contradicted",
+          "consensus": "no_model_opinion",
+          "confidence": 0.8608,
+          "primary_span_id": "arxiv:2403.18802::33242-33346",
+          "evidence": [
+            {
+              "span_id": "arxiv:2403.18802::33242-33346",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "9 Conclusion",
+              "char_range": [
+                33242,
+                33346
+              ],
+              "text": "To do so, we first used GPT-4 to generate LongFact, a set of 2,280 prompts spanning 38 different topics.",
+              "verdict": "contradicted",
+              "coverage": 0.7769,
+              "bm25": 20.238,
+              "cross_lingual": false,
+              "role": "counter_evidence"
+            },
+            {
+              "span_id": "arxiv:2403.18802::20973-21007",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "6 Larger LLMs are more factual",
+              "char_range": [
+                20973,
+                21007
+              ],
+              "text": "GPT-4-0613 (GPT-4), GPT-3.5-Turbo-",
+              "verdict": "insufficient",
+              "coverage": 0.3344,
+              "bm25": 21.0693,
+              "cross_lingual": false,
+              "role": "candidate"
+            },
+            {
+              "span_id": "arxiv:2403.18802::4263-4291",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "1 Introduction",
+              "char_range": [
+                4263,
+                4291
+              ],
+              "text": "We use gpt-4-0613 for GPT-4.",
+              "verdict": "insufficient",
+              "coverage": 0.3344,
+              "bm25": 21.0309,
+              "cross_lingual": false,
+              "role": "candidate"
+            },
+            {
+              "span_id": "arxiv:2310.00741::30343-30347",
+              "doc_id": "arxiv:2310.00741",
+              "doc_title": "FELM: Benchmarking Factuality Evaluation of Large Language Models",
+              "year": 2023,
+              "section": "Factuality evaluators:",
+              "char_range": [
+                30343,
+                30347
+              ],
+              "text": "GPT4",
+              "verdict": "insufficient",
+              "coverage": 0.3344,
+              "bm25": 20.4205,
+              "cross_lingual": false,
+              "role": "candidate"
+            },
+            {
+              "span_id": "arxiv:2310.00741::72668-72673",
+              "doc_id": "arxiv:2310.00741",
+              "doc_title": "FELM: Benchmarking Factuality Evaluation of Large Language Models",
+              "year": 2023,
+              "section": "Appendix E Additional Results",
+              "char_range": [
+                72668,
+                72673
+              ],
+              "text": "GPT-4",
+              "verdict": "insufficient",
+              "coverage": 0.3344,
+              "bm25": 20.4205,
+              "cross_lingual": false,
+              "role": "candidate"
+            }
+          ],
+          "metrics": {
+            "retrieval": {
+              "query": "LongFact 数据集并非由 GPT-4 生成。",
+              "original_query": "LongFact 数据集并非由 GPT-4 生成。",
+              "hits": 8,
+              "top_bm25": 20.238
+            },
+            "coverage": 0.7769,
+            "numeric_score": 1,
+            "cross_lingual": false,
+            "bridge_ratio": 1,
+            "unmatched_concepts": [
+              "数据集"
+            ],
+            "retrieval_query": "LongFact 数据集并非由 GPT-4 生成。",
+            "thresholds": {
+              "SUPPORT_COVERAGE": 0.62,
+              "NO_EVIDENCE_COVERAGE": 0.24,
+              "CONTRADICTION_MIN_COVERAGE": 0.5,
+              "NUMERIC_RELEVANCE": 0.3,
+              "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+              "QUOTE_NORM_TOLERANCE": 0.06,
+              "MIN_BRIDGE_RATIO": 0.5
+            }
+          },
+          "error_codes": [
+            "E_POLARITY_CONFLICT"
+          ]
+        }
+      ],
+      "quote_checks": [],
+      "output": {
+        "kind": "refusal",
+        "reason": "存在无法用原文依据支撑的主张，系统拒绝输出结论。",
+        "blocking_errors": [
+          {
+            "code": "E_POLARITY_CONFLICT",
+            "message": "主张的否定极性与证据相反（如原文说「不能」，主张说「能」）。",
+            "detail": {
+              "span_id": "arxiv:2403.18802::33242-33346",
+              "claim_polarity": "negated",
+              "evidence_polarity": "affirmed",
+              "claim_negation_cues": [
+                "并非"
+              ],
+              "evidence_negation_cues": [],
+              "coverage": 0.7769,
+              "evidence_text": "To do so, we first used GPT-4 to generate LongFact, a set of 2,280 prompts spanning 38 different topics."
+            }
+          }
+        ],
+        "unsupported_claims": [
+          {
+            "claim_id": "C001",
+            "claim": "LongFact 数据集并非由 GPT-4 生成。",
+            "verdict": "contradicted",
+            "error_codes": [
+              "E_POLARITY_CONFLICT"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

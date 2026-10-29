@@ -1,0 +1,16 @@
+{
+  "case_id": "normal-01",
+  "category": "normal",
+  "title": "有据可查的文献总结",
+  "focus": "全部主张都能在语料中定位到支撑片段，系统放行并逐条给出 span 级引用",
+  "input_text": "LongFact 包含 2280 条提示，覆盖 38 个人工选定的主题。RAGTruth 是一个大规模幻觉语料库，提供面向 RAG 场景的词级标注。",
+  "k": 8,
+  "expect": {
+    "decision": "PASS",
+    "error_codes": [],
+    "min_claims": 2,
+    "min_supported": 2,
+    "all_claims_grounded": true,
+    "every_claim_has_citation": true
+  }
+}

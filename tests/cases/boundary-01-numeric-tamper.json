@@ -1,0 +1,14 @@
+{
+  "case_id": "boundary-01-numeric-tamper",
+  "category": "boundary",
+  "title": "数值被改写（38 → 83）",
+  "focus": "文献总结最高频的幻觉形式：其余表述全部正确，只把关键数字改掉。词面相似度极高，靠词覆盖无法识别，必须逐项比对数值",
+  "input_text": "LongFact 是一个提示集，包含 2280 条问题，覆盖 83 个主题。",
+  "k": 8,
+  "expect": {
+    "decision": "REFUSE",
+    "error_codes": ["E_UNSUPPORTED_NUMERIC"],
+    "min_claims": 1,
+    "max_grounding_rate": 0
+  }
+}

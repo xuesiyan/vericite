@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/B2WrWbmx4RA9sGy//M7dVuZbqks</id>
+  <title>arXiv Query: search_query=abs:"hallucination" AND abs:"large language models"&amp;id_list=&amp;start=0&amp;max_results=4</title>
+  <updated>2026-10-03T13:59:41Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22hallucination%22+AND+abs:%22large+language+models%22&amp;start=0&amp;max_results=4&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>4</opensearch:itemsPerPage>
+  <opensearch:totalResults>4520</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2312.14504v2</id>
+    <title>Theory of Hallucinations based on Equivariance</title>
+    <updated>2024-01-04T02:49:21Z</updated>
+    <link href="https://arxiv.org/abs/2312.14504v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.14504v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This study aims to acquire knowledge for creating very large language models that are immune to hallucinations. Hallucinations in contemporary large language models are often attributed to a misunderstanding of real-world social relationships. Therefore, I hypothesize that very large language models capable of thoroughly grasping all these relationships will be free from hallucinations. Additionally, I propose that certain types of equivariant language models are adept at learning and understanding these relationships. Building on this, I have developed a specialized cross-entropy error function to create a hallucination scale for language models, which measures their extent of equivariance acquisition. Utilizing this scale, I tested language models for their ability to acquire character-level equivariance. In particular, I introduce and employ a novel technique based on T5 (Text To Text Transfer Transformer) that efficiently understands permuted input texts without the need for explicit dictionaries to convert token IDs (integers) to texts (strings). This T5 model demonstrated a moderate ability to acquire character-level equivariance. Additionally, I discovered scale laws that can aid in developing hallucination-free language models at the character level. This methodology can be extended to assess equivariance acquisition at the word level, paving the way for very large language models that can comprehensively understand relationships and, consequently, avoid hallucinations.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-22T08:08:45Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hisaichi Shibata</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.07253v4</id>
+    <title>From Out-of-Distribution Detection to Hallucination Detection: A Geometric View</title>
+    <updated>2026-06-04T17:49:13Z</updated>
+    <link href="https://arxiv.org/abs/2602.07253v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.07253v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Detecting hallucinations in large language models is a critical open problem with significant implications for safety and reliability. While existing hallucination detection methods achieve strong performance in question-answering tasks, they remain less effective on tasks requiring reasoning. In this work, we revisit hallucination detection through the lens of out-of-distribution (OOD) detection, a well-studied problem in areas like computer vision. Treating next-token prediction in language models as a classification task allows us to apply OOD techniques, provided appropriate modifications are made to account for the structural differences in large language models. We show that OOD-based approaches yield training-free, single-sample-based detectors, achieving strong accuracy in hallucination detection for reasoning tasks. Overall, our work suggests that reframing hallucination detection as OOD detection provides a promising and scalable pathway toward language model safety.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-06T23:05:48Z</published>
+    <arxiv:comment>ICML 2026 main conference paper</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Litian Liu</name>
+    </author>
+    <author>
+      <name>Reza Pourreza</name>
+    </author>
+    <author>
+      <name>Yubing Jian</name>
+    </author>
+    <author>
+      <name>Yao Qin</name>
+    </author>
+    <author>
+      <name>Roland Memisevic</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2407.04831v2</id>
+    <title>Code Hallucination</title>
+    <updated>2024-08-08T01:01:47Z</updated>
+    <link href="https://arxiv.org/abs/2407.04831v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.04831v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generative models such as large language models are extensively used as code copilots and for whole program generation. However, the programs they generate often have questionable correctness, authenticity and reliability in terms of integration as they might not follow the user requirements, provide incorrect and/or nonsensical outputs, or even contain semantic/syntactic errors - overall known as LLM hallucination. In this work, we present several types of code hallucination. We have generated such hallucinated code manually using large language models. We also present a technique - HallTrigger, in order to demonstrate efficient ways of generating arbitrary code hallucination. Our method leverages 3 different dynamic attributes of LLMs to craft prompts that can successfully trigger hallucinations from models without the need to access model architecture or parameters. Results from popular blackbox models suggest that HallTrigger is indeed effective and the pervasive LLM hallucination have sheer impact on software development.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-05T19:37:37Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Mirza Masfiqur Rahman</name>
+    </author>
+    <author>
+      <name>Ashish Kundu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00396v2</id>
+    <title>RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models</title>
+    <updated>2024-05-17T06:29:31Z</updated>
+    <link href="https://arxiv.org/abs/2401.00396v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.00396v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrieval-augmented generation (RAG) has become a main technique for alleviating hallucinations in large language models (LLMs). Despite the integration of RAG, LLMs may still present unsupported or contradictory claims to the retrieved contents. In order to develop effective hallucination prevention strategies under RAG, it is important to create benchmark datasets that can measure the extent of hallucination. This paper presents RAGTruth, a corpus tailored for analyzing word-level hallucinations in various domains and tasks within the standard RAG frameworks for LLM applications. RAGTruth comprises nearly 18,000 naturally generated responses from diverse LLMs using RAG. These responses have undergone meticulous manual annotations at both the individual cases and word levels, incorporating evaluations of hallucination intensity. We not only benchmark hallucination frequencies across different LLMs, but also critically assess the effectiveness of several existing hallucination detection methodologies. Furthermore, we show that using a high-quality dataset such as RAGTruth, it is possible to finetune a relatively small LLM and achieve a competitive level of performance in hallucination detection when compared to the existing prompt-based approaches using state-of-the-art large language models such as GPT-4.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-31T04:43:45Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Cheng Niu</name>
+    </author>
+    <author>
+      <name>Yuanhao Wu</name>
+    </author>
+    <author>
+      <name>Juno Zhu</name>
+    </author>
+    <author>
+      <name>Siliang Xu</name>
+    </author>
+    <author>
+      <name>Kashun Shum</name>
+    </author>
+    <author>
+      <name>Randy Zhong</name>
+    </author>
+    <author>
+      <name>Juntong Song</name>
+    </author>
+    <author>
+      <name>Tong Zhang</name>
+    </author>
+  </entry>
+</feed>

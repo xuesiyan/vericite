@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/yUIf56QcpWV/XXlE3kOw2cRCGGo</id>
+  <title>arXiv Query: search_query=abs:"natural language inference" AND abs:"fact verification"&amp;id_list=&amp;start=0&amp;max_results=4</title>
+  <updated>2026-10-03T13:59:58Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22natural+language+inference%22+AND+abs:%22fact+verification%22&amp;start=0&amp;max_results=4&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>4</opensearch:itemsPerPage>
+  <opensearch:totalResults>12</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1910.09796v4</id>
+    <title>Fine-grained Fact Verification with Kernel Graph Attention Network</title>
+    <updated>2021-06-20T09:54:54Z</updated>
+    <link href="https://arxiv.org/abs/1910.09796v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1910.09796v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fact Verification requires fine-grained natural language inference capability that finds subtle clues to identify the syntactical and semantically correct but not well-supported claims. This paper presents Kernel Graph Attention Network (KGAT), which conducts more fine-grained fact verification with kernel-based attentions. Given a claim and a set of potential evidence sentences that form an evidence graph, KGAT introduces node kernels, which better measure the importance of the evidence node, and edge kernels, which conduct fine-grained evidence propagation in the graph, into Graph Attention Networks for more accurate fact verification. KGAT achieves a 70.38% FEVER score and significantly outperforms existing fact verification models on FEVER, a large-scale benchmark for fact verification. Our analyses illustrate that, compared to dot-product attentions, the kernel-based attention concentrates more on relevant evidence sentences and meaningful clues in the evidence graph, which is the main source of KGAT's effectiveness.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-10-22T07:06:45Z</published>
+    <arxiv:comment>Accepted to ACL 2020, 10 pages, 6 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhenghao Liu</name>
+    </author>
+    <author>
+      <name>Chenyan Xiong</name>
+    </author>
+    <author>
+      <name>Maosong Sun</name>
+    </author>
+    <author>
+      <name>Zhiyuan Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2004.14366v2</id>
+    <title>Elastic weight consolidation for better bias inoculation</title>
+    <updated>2021-02-04T10:57:26Z</updated>
+    <link href="https://arxiv.org/abs/2004.14366v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2004.14366v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The biases present in training datasets have been shown to affect models for sentence pair classification tasks such as natural language inference (NLI) and fact verification. While fine-tuning models on additional data has been used to mitigate them, a common issue is that of catastrophic forgetting of the original training dataset. In this paper, we show that elastic weight consolidation (EWC) allows fine-tuning of models to mitigate biases while being less susceptible to catastrophic forgetting. In our evaluation on fact verification and NLI stress tests, we show that fine-tuning with EWC dominates standard fine-tuning, yielding models with lower levels of forgetting on the original (biased) dataset for equivalent gains in accuracy on the fine-tuning (unbiased) dataset.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-29T17:45:12Z</published>
+    <arxiv:comment>Accepted at EACL 2021. Was previously submitted to arxiv with the title "Avoiding catastrophic forgetting in mitigating model biases in sentence-pair classification with elastic weight consolidation"</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>James Thorne</name>
+    </author>
+    <author>
+      <name>Andreas Vlachos</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2103.08541v1</id>
+    <title>Get Your Vitamin C! Robust Fact Verification with Contrastive Evidence</title>
+    <updated>2021-03-15T17:05:13Z</updated>
+    <link href="https://arxiv.org/abs/2103.08541v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2103.08541v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Typical fact verification models use retrieved written evidence to verify claims. Evidence sources, however, often change over time as more information is gathered and revised. In order to adapt, models must be sensitive to subtle differences in supporting evidence. We present VitaminC, a benchmark infused with challenging cases that require fact verification models to discern and adjust to slight factual changes. We collect over 100,000 Wikipedia revisions that modify an underlying fact, and leverage these revisions, together with additional synthetically constructed ones, to create a total of over 400,000 claim-evidence pairs. Unlike previous resources, the examples in VitaminC are contrastive, i.e., they contain evidence pairs that are nearly identical in language and content, with the exception that one supports a given claim while the other does not. We show that training using this design increases robustness -- improving accuracy by 10% on adversarial fact verification and 6% on adversarial natural language inference (NLI). Moreover, the structure of VitaminC leads us to define additional tasks for fact-checking resources: tagging relevant words in the evidence for verifying the claim, identifying factual revisions, and providing automatic edits via factually consistent text generation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-03-15T17:05:13Z</published>
+    <arxiv:comment>NAACL 2021</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Tal Schuster</name>
+    </author>
+    <author>
+      <name>Adam Fisch</name>
+    </author>
+    <author>
+      <name>Regina Barzilay</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2404.19482v1</id>
+    <title>FactCheck Editor: Multilingual Text Editor with End-to-End fact-checking</title>
+    <updated>2024-04-30T11:55:20Z</updated>
+    <link href="https://arxiv.org/abs/2404.19482v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.19482v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce 'FactCheck Editor', an advanced text editor designed to automate fact-checking and correct factual inaccuracies. Given the widespread issue of misinformation, often a result of unintentional mistakes by content creators, our tool aims to address this challenge. It supports over 90 languages and utilizes transformer models to assist humans in the labor-intensive process of fact verification. This demonstration showcases a complete workflow that detects text claims in need of verification, generates relevant search engine queries, and retrieves appropriate documents from the web. It employs Natural Language Inference (NLI) to predict the veracity of claims and uses LLMs to summarize the evidence and suggest textual revisions to correct any errors in the text. Additionally, the effectiveness of models used in claim detection and veracity assessment is evaluated across multiple languages.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-30T11:55:20Z</published>
+    <arxiv:comment>Accepted in SIGIR 2024 (demo track)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Vinay Setty</name>
+    </author>
+  </entry>
+</feed>

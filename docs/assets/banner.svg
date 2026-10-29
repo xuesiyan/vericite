@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="55%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+
+  <!-- 左侧装饰：校验节点树 -->
+  <g opacity="0.5">
+    <circle cx="1058" cy="92" r="4" fill="#34d399"/>
+    <circle cx="1058" cy="158" r="4" fill="#3b82f6"/>
+    <circle cx="1058" cy="224" r="4" fill="#fbbf24"/>
+    <line x1="1058" y1="92" x2="1058" y2="224" stroke="#ffffff" stroke-width="1" opacity="0.18"/>
+    <circle cx="928" cy="92" r="4" fill="#34d399" opacity="0.55"/>
+    <circle cx="928" cy="224" r="4" fill="#fbbf24" opacity="0.55"/>
+    <line x1="928" y1="92" x2="1058" y2="92" stroke="#ffffff" stroke-width="1" opacity="0.10"/>
+    <line x1="928" y1="224" x2="1058" y2="224" stroke="#ffffff" stroke-width="1" opacity="0.10"/>
+  </g>
+
+  <text x="64" y="96" font-size="52" font-weight="700" fill="#ffffff" letter-spacing="-1">VeriCite</text>
+  <rect x="66" y="112" width="86" height="4" rx="2" fill="url(#accent)"/>
+
+  <text x="64" y="164" font-size="20" font-weight="500" fill="#cbd5e1">科研文献溯源核查智能体 · Provenance Verification Agent for Scientific Literature</text>
+
+  <text x="64" y="212" font-size="15" fill="#94a3b8">每条结论必须指出原文哪一段支撑它 —— 指不出来，就拒绝输出。</text>
+  <text x="64" y="238" font-size="15" fill="#64748b">Every claim must point to a span in the source. If it cannot, the system refuses to answer.</text>
+
+  <g>
+    <rect x="64" y="266" width="112" height="28" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="120" y="285" font-size="12.5" fill="#34d399" text-anchor="middle" font-weight="600">PASS</text>
+    <rect x="184" y="266" width="112" height="28" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="240" y="285" font-size="12.5" fill="#fbbf24" text-anchor="middle" font-weight="600">ESCALATE</text>
+    <rect x="304" y="266" width="112" height="28" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="360" y="285" font-size="12.5" fill="#f87171" text-anchor="middle" font-weight="600">REFUSE</text>
+    <text x="436" y="285" font-size="12.5" fill="#64748b">确定性核验 · 非对称仲裁 · 零运行时依赖</text>
+  </g>
+</svg>

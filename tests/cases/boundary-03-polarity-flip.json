@@ -1,0 +1,14 @@
+{
+  "case_id": "boundary-03-polarity-flip",
+  "category": "boundary",
+  "title": "否定极性被反转（「由 GPT-4 生成」→「并非由 GPT-4 生成」）",
+  "focus": "概念覆盖率与正确表述几乎一致，仅在否定词上做了反转。这类改写最隐蔽：逐词看都『对得上』，语义却完全相反。系统必须检出极性冲突并给出反证原文",
+  "input_text": "LongFact 数据集并非由 GPT-4 生成。",
+  "k": 8,
+  "expect": {
+    "decision": "REFUSE",
+    "error_codes": ["E_POLARITY_CONFLICT"],
+    "min_claims": 1,
+    "max_grounding_rate": 0
+  }
+}

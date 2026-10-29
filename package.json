@@ -1,0 +1,35 @@
+{
+  "name": "vericite",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VeriCite — 科研文献溯源核查智能体：强制每条结论提供原文依据，无依据则拒答报错。",
+  "license": "MIT",
+  "exports": {
+    ".": "./agh-plugin/index.mjs",
+    "./core": "./core/audit.mjs"
+  },
+  "bin": {
+    "vericite": "./cli.mjs"
+  },
+  "scripts": {
+    "build:corpus": "node tools/build-corpus.mjs",
+    "demo": "node cli.mjs demo --all",
+    "test": "node tests/run.mjs",
+    "agh:integration": "node tools/run-agh-integration.mjs"
+  },
+  "agnes": {
+    "plugins": [
+      {
+        "export": "vericitePlugin",
+        "id": "ext:vericite/provenance",
+        "inject": [
+          "extension"
+        ]
+      }
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

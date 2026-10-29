@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/YjEIuB48MYYsTQcQ4StCEilo43w</id>
+  <title>arXiv Query: search_query=abs:"citation" AND abs:"text generation"&amp;id_list=&amp;start=0&amp;max_results=4</title>
+  <updated>2026-10-03T14:00:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22citation%22+AND+abs:%22text+generation%22&amp;start=0&amp;max_results=4&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>4</opensearch:itemsPerPage>
+  <opensearch:totalResults>27</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2212.09577v3</id>
+    <title>CiteBench: A benchmark for Scientific Citation Text Generation</title>
+    <updated>2023-11-03T19:55:56Z</updated>
+    <link href="https://arxiv.org/abs/2212.09577v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2212.09577v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Science progresses by building upon the prior body of knowledge documented in scientific publications. The acceleration of research makes it hard to stay up-to-date with the recent developments and to summarize the ever-growing body of prior work. To address this, the task of citation text generation aims to produce accurate textual summaries given a set of papers-to-cite and the citing paper context. Due to otherwise rare explicit anchoring of cited documents in the citing paper, citation text generation provides an excellent opportunity to study how humans aggregate and synthesize textual knowledge from sources. Yet, existing studies are based upon widely diverging task definitions, which makes it hard to study this task systematically. To address this challenge, we propose CiteBench: a benchmark for citation text generation that unifies multiple diverse datasets and enables standardized evaluation of citation text generation models across task designs and domains. Using the new benchmark, we investigate the performance of multiple strong baselines, test their transferability between the datasets, and deliver new insights into the task definition and evaluation to guide future research in citation text generation. We make the code for CiteBench publicly available at https://github.com/UKPLab/citebench.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-12-19T16:10:56Z</published>
+    <arxiv:comment>To appear in EMNLP</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Martin Funkquist</name>
+    </author>
+    <author>
+      <name>Ilia Kuznetsov</name>
+    </author>
+    <author>
+      <name>Yufang Hou</name>
+    </author>
+    <author>
+      <name>Iryna Gurevych</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2402.18054v1</id>
+    <title>Contextualizing Generated Citation Texts</title>
+    <updated>2024-02-28T05:24:21Z</updated>
+    <link href="https://arxiv.org/abs/2402.18054v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2402.18054v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Abstractive citation text generation is usually framed as an infilling task, where a sequence-to-sequence model is trained to generate a citation given a reference paper and the context window around the target; the generated citation should be a brief discussion of the reference paper as it relates to the citing context. However, examining a recent LED-based citation generation system, we find that many of the generated citations are generic summaries of the reference papers main contribution, ignoring the citation contexts focus on a different topic. To address this problem, we propose a simple modification to the citation text generation task: the generation target is not only the citation itself, but the entire context window, including the target citation. This approach can be easily applied to any abstractive citation generation system, and our experimental results show that training in this way is preferred by human readers and allows the generation model to make use of contextual clues about what topic to discuss and what stance to take.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-02-28T05:24:21Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Biswadip Mandal</name>
+    </author>
+    <author>
+      <name>Xiangci Li</name>
+    </author>
+    <author>
+      <name>Jessica Ouyang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2407.04046v1</id>
+    <title>Systematic Task Exploration with LLMs: A Study in Citation Text Generation</title>
+    <updated>2024-07-04T16:41:08Z</updated>
+    <link href="https://arxiv.org/abs/2407.04046v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.04046v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) bring unprecedented flexibility in defining and executing complex, creative natural language generation (NLG) tasks. Yet, this flexibility brings new challenges, as it introduces new degrees of freedom in formulating the task inputs and instructions and in evaluating model performance. To facilitate the exploration of creative NLG tasks, we propose a three-component research framework that consists of systematic input manipulation, reference data, and output measurement. We use this framework to explore citation text generation -- a popular scholarly NLP task that lacks consensus on the task definition and evaluation metric and has not yet been tackled within the LLM paradigm. Our results highlight the importance of systematically investigating both task instruction and input configuration when prompting LLMs, and reveal non-trivial relationships between different evaluation metrics used for citation text generation. Additional human generation and human evaluation experiments provide new qualitative insights into the task to guide future research in citation text generation. We make our code and data publicly available.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-04T16:41:08Z</published>
+    <arxiv:comment>Accepted to ACL 2024 (Main)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Furkan Şahinuç</name>
+    </author>
+    <author>
+      <name>Ilia Kuznetsov</name>
+    </author>
+    <author>
+      <name>Yufang Hou</name>
+    </author>
+    <author>
+      <name>Iryna Gurevych</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2312.09075v3</id>
+    <title>Towards Verifiable Text Generation with Evolving Memory and Self-Reflection</title>
+    <updated>2024-10-18T09:02:46Z</updated>
+    <link href="https://arxiv.org/abs/2312.09075v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.09075v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Despite the remarkable ability of large language models (LLMs) in language comprehension and generation, they often suffer from producing factually incorrect information, also known as hallucination. A promising solution to this issue is verifiable text generation, which prompts LLMs to generate content with citations for accuracy verification. However, verifiable text generation is non-trivial due to the focus-shifting phenomenon, the intricate reasoning needed to align the claim with correct citations, and the dilemma between the precision and breadth of retrieved documents. In this paper, we present VTG, an innovative framework for Verifiable Text Generation with evolving memory and self-reflection. VTG introduces evolving long short-term memory to retain both valuable documents and recent documents. A two-tier verifier equipped with an evidence finder is proposed to rethink and reflect on the relationship between the claim and citations. Furthermore, active retrieval and diverse query generation are utilized to enhance both the precision and breadth of the retrieved documents. We conduct extensive experiments on five datasets across three knowledge-intensive tasks and the results reveal that VTG significantly outperforms baselines.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-14T16:10:56Z</published>
+    <arxiv:comment>EMNLP 2024 Main Conference</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hao Sun</name>
+    </author>
+    <author>
+      <name>Hengyi Cai</name>
+    </author>
+    <author>
+      <name>Bo Wang</name>
+    </author>
+    <author>
+      <name>Yingyan Hou</name>
+    </author>
+    <author>
+      <name>Xiaochi Wei</name>
+    </author>
+    <author>
+      <name>Shuaiqiang Wang</name>
+    </author>
+    <author>
+      <name>Yan Zhang</name>
+    </author>
+    <author>
+      <name>Dawei Yin</name>
+    </author>
+  </entry>
+</feed>

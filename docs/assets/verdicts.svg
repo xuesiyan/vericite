@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+
+  <text x="50" y="52" font-size="20" font-weight="700" fill="#0f172a">10 个测试样例 · 裁决分布</text>
+  <text x="50" y="78" font-size="13" fill="#64748b">拒绝（REFUSE）是预期的正确结果，而不是失败</text>
+
+  <!-- 8 REFUSE -->
+  <g>
+    <rect x="50" y="110" width="640" height="60" rx="8" fill="#fdecea"/>
+    <rect x="50" y="110" width="640" height="60" rx="8" fill="none" stroke="#f5b5ae"/>
+    <text x="76" y="147" font-size="22" font-weight="700" fill="#d93025">REFUSE</text>
+    <text x="172" y="147" font-size="14" fill="#8a5a55">拒绝输出 —— 8 / 10</text>
+    <text x="668" y="147" font-size="15" fill="#64748b">该拒绝时一定拒绝</text>
+  </g>
+
+  <!-- 1 ESCALATE -->
+  <g>
+    <rect x="50" y="186" width="80" height="60" rx="8" fill="#fef4e6"/>
+    <rect x="50" y="186" width="80" height="60" rx="8" fill="none" stroke="#f6d9a8"/>
+    <text x="90" y="223" font-size="14" font-weight="700" fill="#e8890c" text-anchor="middle">1</text>
+    <text x="150" y="212" font-size="15" font-weight="600" fill="#0f172a">ESCALATE</text>
+    <text x="150" y="233" font-size="13" fill="#64748b">双通道分歧 → 升级人工复核（模型可升级，不可否决）</text>
+  </g>
+
+  <!-- 1 PASS -->
+  <g>
+    <rect x="50" y="262" width="80" height="60" rx="8" fill="#e9f7ef"/>
+    <rect x="50" y="262" width="80" height="60" rx="8" fill="none" stroke="#bfe6ce"/>
+    <text x="90" y="299" font-size="14" font-weight="700" fill="#0f9d58" text-anchor="middle">1</text>
+    <text x="150" y="288" font-size="15" font-weight="600" fill="#0f172a">PASS</text>
+    <text x="150" y="309" font-size="13" fill="#64748b">全部主张可定位到支撑片段 → 放行，逐条附 span 引用</text>
+  </g>
+
+  <!-- 右侧统计 -->
+  <g>
+    <rect x="740" y="110" width="210" height="212" rx="10" fill="#f8fafc" stroke="#e4e7eb"/>
+    <text x="845" y="150" font-size="38" font-weight="700" fill="#0f172a" text-anchor="middle">10/10</text>
+    <text x="845" y="174" font-size="12.5" fill="#64748b" text-anchor="middle">样例通过</text>
+    <line x1="770" y1="196" x2="920" y2="196" stroke="#e4e7eb"/>
+
+    <text x="845" y="234" font-size="38" font-weight="700" fill="#0f172a" text-anchor="middle">37/37</text>
+    <text x="845" y="258" font-size="12.5" fill="#64748b" text-anchor="middle">断言通过</text>
+    <line x1="770" y1="278" x2="920" y2="278" stroke="#e4e7eb"/>
+
+    <text x="845" y="304" font-size="13" fill="#64748b" text-anchor="middle">覆盖 8 类结构化错误码</text>
+  </g>
+
+  <text x="50" y="360" font-size="12.5" fill="#94a3b8">类别构成：正常 1 · 边界 5（数值篡改 / 强度越权 / 极性反转 / 引文失真 / 语料外主张）· 失败 4（伪造 span / 指令注入 / 通道冲突 / 空输入）</text>
+</svg>

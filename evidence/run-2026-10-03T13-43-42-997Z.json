@@ -1,0 +1,352 @@
+{
+  "vericite_version": "1.0.0",
+  "generated_at": "2026-10-03T13:43:42.997Z",
+  "generator": "node cli.mjs demo --all",
+  "runtime": {
+    "node": "v24.21.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "corpus": {
+    "corpus_id": "vericite-corpus-v1",
+    "doc_count": 32,
+    "span_count": 26092,
+    "content_sha256": "1683c77844952b8b598dcbc4edfb71f29741dc54e7e00696f0b562d12293fec3"
+  },
+  "thresholds": {
+    "SUPPORT_COVERAGE": 0.62,
+    "NO_EVIDENCE_COVERAGE": 0.24,
+    "CONTRADICTION_MIN_COVERAGE": 0.5,
+    "NUMERIC_RELEVANCE": 0.3,
+    "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+    "QUOTE_NORM_TOLERANCE": 0.06,
+    "MIN_BRIDGE_RATIO": 0.5
+  },
+  "error_catalog": {
+    "E_CORPUS_MISSING": {
+      "severity": "fatal",
+      "stage": "planning",
+      "handling": "立即终止，禁止输出任何结论（不得凭模型先验作答）。"
+    },
+    "E_EMPTY_QUERY": {
+      "severity": "fatal",
+      "stage": "planning",
+      "handling": "终止并要求重新表述核查对象。"
+    },
+    "E_NO_EVIDENCE": {
+      "severity": "fatal",
+      "stage": "retrieval",
+      "handling": "终止该主张，返回「无依据」并附检索式与语料范围说明。"
+    },
+    "E_INSUFFICIENT_EVIDENCE": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出该主张，返回候选片段供人工判断。"
+    },
+    "E_CONTRADICTION": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，并同时给出反证片段引用。"
+    },
+    "E_UNSUPPORTED_NUMERIC": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，列出主张数值与原文数值的差异对照。"
+    },
+    "E_POLARITY_CONFLICT": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，标注极性冲突位置。"
+    },
+    "E_STRENGTH_OVERCLAIM": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝原始表述，要求降级到证据允许的强度后重试。"
+    },
+    "E_ENTITY_MISMATCH": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝输出，列出未获支撑的实体。"
+    },
+    "E_SPAN_NOT_FOUND": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝该引用；计入「引用真实性」指标。"
+    },
+    "E_SPAN_OUT_OF_RANGE": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝该引用；计入「引用真实性」指标。"
+    },
+    "E_QUOTE_MISMATCH": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "拒绝该引用；判定为引文失真。"
+    },
+    "E_MODEL_CONFLICT": {
+      "severity": "degrade",
+      "stage": "verification",
+      "handling": "不放行也不否决，标记为「需人工复核」并双通道留痕。"
+    },
+    "E_CLAIM_TOO_LONG": {
+      "severity": "degrade",
+      "stage": "audit",
+      "handling": "拆分后重新核查；未拆分部分不进入结论。"
+    },
+    "E_INJECTION_SUSPECTED": {
+      "severity": "fatal",
+      "stage": "retrieval",
+      "handling": "隔离该片段，不作为证据使用，并在审计记录中标记。"
+    },
+    "E_CROSSLINGUAL_LOW_MAPPING": {
+      "severity": "fatal",
+      "stage": "verification",
+      "handling": "不采信该证据；判定为 insufficient，并提示改用原文语言表述或补充术语映射。"
+    },
+    "E_UNSUPPORTED_LANGUAGE": {
+      "severity": "warn",
+      "stage": "planning",
+      "handling": "继续执行但降低置信度，并在报告显著位置声明。"
+    }
+  },
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "assertions_passed": 3,
+    "assertions_total": 3,
+    "decisions": {
+      "REFUSE": 1
+    },
+    "error_codes_covered": [
+      "E_QUOTE_MISMATCH"
+    ]
+  },
+  "runs": [
+    {
+      "case_id": "boundary-04-quote-distortion",
+      "category": "boundary",
+      "title": "引文失真（引文被拼接改写）",
+      "focus": "span_id 完全合法、结论本身也有依据，但附带的『原文引用』被改写拼接。这是最隐蔽的引用失真——引用编号真实存在，读者若不逐字回原文核对就会被骗过",
+      "expected": {
+        "decision": "REFUSE",
+        "error_codes": [
+          "E_QUOTE_MISMATCH"
+        ],
+        "min_claims": 1
+      },
+      "passed": true,
+      "corpus_used": "corpus:vericite-corpus-v1",
+      "checks": [
+        {
+          "name": "最终裁决",
+          "ok": true,
+          "detail": "期望 REFUSE，实际 REFUSE"
+        },
+        {
+          "name": "触发错误码 E_QUOTE_MISMATCH",
+          "ok": true,
+          "detail": "已触发"
+        },
+        {
+          "name": "主张数下限",
+          "ok": true,
+          "detail": "期望 ≥1，实际 1"
+        }
+      ],
+      "decision": "REFUSE",
+      "summary": {
+        "sentences": 1,
+        "atomic_claims": 1,
+        "supported": 1,
+        "contradicted": 0,
+        "insufficient": 0,
+        "grounding_rate": 1,
+        "elapsed_ms": 27
+      },
+      "error_codes": [
+        "E_QUOTE_MISMATCH"
+      ],
+      "errors": [
+        {
+          "code": "E_QUOTE_MISMATCH",
+          "severity": "fatal",
+          "stage": "verification",
+          "meaning": "引用者给出的原文片段与该 span 的实际内容不一致（引文被改写/拼接）。",
+          "handling": "拒绝该引用；判定为引文失真。",
+          "message": "引用者给出的原文片段与该 span 的实际内容不一致（引文被改写/拼接）。",
+          "detail": {
+            "span_id": "arxiv:2403.18802::4423-4539",
+            "claimed_quote": "LongFact consists of 2,280 fact-seeking prompts across 83 manually-selected topics, all verified by human experts.",
+            "actual_span_text": "LongFact consists of 2,280 fact-seeking prompts that solicit long-form responses across 38 manually-selected topics.",
+            "similarity": 0.6792
+          }
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "C001",
+          "claim": "LongFact 是一个提示集，包含 2280 条问题，覆盖 38 个主题。",
+          "final_verdict": "supported",
+          "consensus": "no_model_opinion",
+          "confidence": 0.8909,
+          "primary_span_id": "arxiv:2403.18802::4423-4539",
+          "evidence": [
+            {
+              "span_id": "arxiv:2403.18802::4423-4539",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "1 Introduction",
+              "char_range": [
+                4423,
+                4539
+              ],
+              "text": "LongFact consists of 2,280 fact-seeking prompts that solicit long-form responses across 38 manually-selected topics.",
+              "verdict": "supported",
+              "coverage": 0.7273,
+              "bm25": 57.4716,
+              "cross_lingual": true,
+              "role": "support"
+            },
+            {
+              "span_id": "arxiv:2403.18802::33242-33346",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "9 Conclusion",
+              "char_range": [
+                33242,
+                33346
+              ],
+              "text": "To do so, we first used GPT-4 to generate LongFact, a set of 2,280 prompts spanning 38 different topics.",
+              "verdict": "insufficient",
+              "coverage": 0.5629,
+              "bm25": 57.9021,
+              "cross_lingual": true,
+              "role": "candidate"
+            },
+            {
+              "span_id": "arxiv:2403.18802::912-1080",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "Long-form factuality in large language models",
+              "char_range": [
+                912,
+                1080
+              ],
+              "text": "To benchmark a model’s long-form factuality in open domains, we first use GPT-4 to generate LongFact, a prompt set comprising thousands of questions spanning 38 topics.",
+              "verdict": "insufficient",
+              "coverage": 0.531,
+              "bm25": 46.4366,
+              "cross_lingual": true,
+              "role": "candidate"
+            },
+            {
+              "span_id": "arxiv:2403.18802::8902-9002",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "2 LongFact: Using LLMs to generate a multi-topic benchmark for long-form factuality",
+              "char_range": [
+                8902,
+                9002
+              ],
+              "text": "Left: LongFact consists of 38 topics (listed in Section B.2 ) categorized into four supercategories.",
+              "verdict": "insufficient",
+              "coverage": 0.4616,
+              "bm25": 37.6443,
+              "cross_lingual": true,
+              "role": "candidate"
+            },
+            {
+              "span_id": "arxiv:2403.18802::76195-76326",
+              "doc_id": "arxiv:2403.18802",
+              "doc_title": "Long-form factuality in large language models",
+              "year": 2024,
+              "section": "B.1 Data-generation process",
+              "char_range": [
+                76195,
+                76326
+              ],
+              "text": "We manually selected a set of 38 topics for LongFact in order to provide broad coverage of long-form factuality across many topics.",
+              "verdict": "insufficient",
+              "coverage": 0.4228,
+              "bm25": 40.8673,
+              "cross_lingual": true,
+              "role": "candidate"
+            }
+          ],
+          "metrics": {
+            "retrieval": {
+              "query": "LongFact 是一个 prompt set prompt sets ， contains contains consists of comprises includes 2280 条 question questions problem problems ， covers covering spanning across span 38 个 topic topics 。",
+              "original_query": "LongFact 是一个提示集，包含 2280 条问题，覆盖 38 个主题。",
+              "hits": 8,
+              "top_bm25": 57.4716
+            },
+            "coverage": 0.7273,
+            "numeric_score": 1,
+            "cross_lingual": true,
+            "bridge_ratio": 0.8,
+            "unmatched_concepts": [
+              "集",
+              "问题"
+            ],
+            "retrieval_query": "LongFact 是一个 prompt set prompt sets ， contains contains consists of comprises includes 2280 条 question questions problem problems ， covers covering spanning across span 38 个 topic topics 。",
+            "thresholds": {
+              "SUPPORT_COVERAGE": 0.62,
+              "NO_EVIDENCE_COVERAGE": 0.24,
+              "CONTRADICTION_MIN_COVERAGE": 0.5,
+              "NUMERIC_RELEVANCE": 0.3,
+              "MAX_UNSUPPORTED_ENTITY_RATIO": 0.34,
+              "QUOTE_NORM_TOLERANCE": 0.06,
+              "MIN_BRIDGE_RATIO": 0.5
+            }
+          },
+          "error_codes": []
+        }
+      ],
+      "quote_checks": [
+        {
+          "span_id": "arxiv:2403.18802::4423-4539",
+          "quoted_text": "LongFact consists of 2,280 fact-seeking prompts across 83 manually-selected topics, all verified by human experts.",
+          "ok": false,
+          "similarity": 0.6792,
+          "errors": [
+            {
+              "code": "E_QUOTE_MISMATCH",
+              "severity": "fatal",
+              "stage": "verification",
+              "meaning": "引用者给出的原文片段与该 span 的实际内容不一致（引文被改写/拼接）。",
+              "handling": "拒绝该引用；判定为引文失真。",
+              "message": "引用者给出的原文片段与该 span 的实际内容不一致（引文被改写/拼接）。",
+              "detail": {
+                "span_id": "arxiv:2403.18802::4423-4539",
+                "claimed_quote": "LongFact consists of 2,280 fact-seeking prompts across 83 manually-selected topics, all verified by human experts.",
+                "actual_span_text": "LongFact consists of 2,280 fact-seeking prompts that solicit long-form responses across 38 manually-selected topics.",
+                "similarity": 0.6792
+              }
+            }
+          ]
+        }
+      ],
+      "output": {
+        "kind": "refusal",
+        "reason": "存在无法用原文依据支撑的主张，系统拒绝输出结论。",
+        "blocking_errors": [
+          {
+            "code": "E_QUOTE_MISMATCH",
+            "message": "引用者给出的原文片段与该 span 的实际内容不一致（引文被改写/拼接）。",
+            "detail": {
+              "span_id": "arxiv:2403.18802::4423-4539",
+              "claimed_quote": "LongFact consists of 2,280 fact-seeking prompts across 83 manually-selected topics, all verified by human experts.",
+              "actual_span_text": "LongFact consists of 2,280 fact-seeking prompts that solicit long-form responses across 38 manually-selected topics.",
+              "similarity": 0.6792
+            }
+          }
+        ],
+        "unsupported_claims": []
+      }
+    }
+  ]
+}

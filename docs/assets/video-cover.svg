@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="vbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="play" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="480" fill="url(#vbg)"/>
+
+  <!-- 终端窗口装饰 -->
+  <rect x="56" y="56" width="848" height="288" rx="10" fill="#0b1120" stroke="#334155"/>
+  <rect x="56" y="56" width="848" height="34" rx="10" fill="#1e293b"/>
+  <rect x="56" y="80" width="848" height="10" fill="#1e293b"/>
+  <circle cx="80" cy="73" r="5.5" fill="#ef4444"/>
+  <circle cx="100" cy="73" r="5.5" fill="#f59e0b"/>
+  <circle cx="120" cy="73" r="5.5" fill="#22c55e"/>
+  <text x="480" y="78" font-size="12.5" fill="#64748b" text-anchor="middle">vericite — node cli.mjs audit</text>
+
+  <text x="82" y="130" font-size="13.5" fill="#64748b" font-family="Consolas, monospace">$ node cli.mjs audit --text "…覆盖 83 个主题。"</text>
+  <text x="82" y="162" font-size="13.5" fill="#94a3b8" font-family="Consolas, monospace">  corpus     32 docs · 26092 spans · sha256 1683c778…</text>
+  <text x="82" y="188" font-size="13.5" fill="#94a3b8" font-family="Consolas, monospace">  claims     1 atomic claim</text>
+  <text x="82" y="214" font-size="13.5" fill="#94a3b8" font-family="Consolas, monospace">  verify     numeric 38 ≠ 83 · coverage 0.91</text>
+  <text x="82" y="248" font-size="15" font-weight="700" fill="#f87171" font-family="Consolas, monospace">  decision   REFUSE</text>
+  <text x="82" y="274" font-size="13" fill="#94a3b8" font-family="Consolas, monospace">  code       E_UNSUPPORTED_NUMERIC</text>
+  <text x="82" y="298" font-size="13" fill="#94a3b8" font-family="Consolas, monospace">  evidence   arxiv:2207.01517::8120-8186  "38 个人工选定…"</text>
+
+  <!-- 播放按钮 -->
+  <g>
+    <circle cx="480" cy="200" r="46" fill="url(#play)" opacity="0.95"/>
+    <path d="M 468 176 L 504 200 L 468 224 Z" fill="#0f172a"/>
+  </g>
+
+  <!-- 底部信息 -->
+  <text x="480" y="386" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">VeriCite 演示视频</text>
+  <text x="480" y="414" font-size="14" fill="#94a3b8" text-anchor="middle">3–5 分钟 · 实际 4 分 36 秒 · 中文旁白 · 全流程真实运行</text>
+
+  <g>
+    <rect x="366" y="434" width="228" height="30" rx="15" fill="#1e293b" stroke="#334155"/>
+    <text x="480" y="454" font-size="13" fill="#34d399" text-anchor="middle" font-weight="600">▶ 点击观看 · bilibili.com</text>
+  </g>
+</svg>

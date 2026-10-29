@@ -1,0 +1,21 @@
+{
+  "case_id": "failure-03-model-conflict",
+  "category": "failure",
+  "title": "双通道判定分歧（Agnes 模型通道与确定性通道不一致）",
+  "focus": "确定性通道判定该主张有依据，Agnes 模型通道认为依据不足。系统不放行也不否决，而是升级为『需人工复核』并保留两条通道的判定与理由。验证非对称规则：模型可以触发升级，但无法推翻确定性通道的否决",
+  "input_text": "LongFact 是一个提示集，包含 2280 条问题，覆盖 38 个主题。",
+  "k": 8,
+  "model_verdicts": [
+    {
+      "claim_id": "C001",
+      "verdict": "insufficient",
+      "reason": "模型通道认为：该结论虽与原文用词相近，但未明确说明统计口径，谨慎起见应视为依据不足。"
+    }
+  ],
+  "expect": {
+    "decision": "ESCALATE",
+    "error_codes": ["E_MODEL_CONFLICT"],
+    "min_claims": 1,
+    "max_grounding_rate": 0
+  }
+}

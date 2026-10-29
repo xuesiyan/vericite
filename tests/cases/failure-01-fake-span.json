@@ -1,0 +1,19 @@
+{
+  "case_id": "failure-01-fake-span",
+  "category": "failure",
+  "title": "伪造证据引用（span_id 不存在）",
+  "focus": "结论本身有依据，但附加了一条凭空捏造的证据引用。引用格式看起来完全正常，靠肉眼无法分辨，必须由系统按 span_id 回语料实体核对",
+  "input_text": "LongFact 是一个提示集，包含 2280 条问题，覆盖 38 个主题。",
+  "k": 8,
+  "quotes": [
+    {
+      "span_id": "arxiv:2403.18802::999999-999999",
+      "text": "LongFact contains 2,280 prompts spanning 38 topics verified by a panel of domain experts."
+    }
+  ],
+  "expect": {
+    "decision": "REFUSE",
+    "error_codes": ["E_SPAN_NOT_FOUND"],
+    "min_claims": 1
+  }
+}

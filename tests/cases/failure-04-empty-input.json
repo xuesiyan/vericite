@@ -1,0 +1,12 @@
+{
+  "case_id": "failure-04-empty-input",
+  "category": "failure",
+  "title": "输入中不存在可核查主张",
+  "focus": "输入为标题、提问或纯元话语时不存在可核查的原子主张。系统必须直接终止，而不是把元话语『核查』一遍后给出一个空洞的通过结论",
+  "input_text": "本文。",
+  "k": 8,
+  "expect": {
+    "decision": "REFUSE",
+    "error_codes": ["E_EMPTY_QUERY"]
+  }
+}

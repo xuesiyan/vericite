@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/TVGoqWlkRVia8hOIpKFJSksO8fA</id>
+  <title>arXiv Query: search_query=abs:"faithfulness" AND abs:"retrieval-augmented generation"&amp;id_list=&amp;start=0&amp;max_results=4</title>
+  <updated>2026-10-03T13:59:50Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22faithfulness%22+AND+abs:%22retrieval-augmented+generation%22&amp;start=0&amp;max_results=4&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>4</opensearch:itemsPerPage>
+  <opensearch:totalResults>222</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2406.13692v2</id>
+    <title>Synchronous Faithfulness Monitoring for Trustworthy Retrieval-Augmented Generation</title>
+    <updated>2024-10-03T20:55:18Z</updated>
+    <link href="https://arxiv.org/abs/2406.13692v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.13692v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrieval-augmented language models (RALMs) have shown strong performance and wide applicability in knowledge-intensive tasks. However, there are significant trustworthiness concerns as RALMs are prone to generating unfaithful outputs, including baseless information or contradictions with the retrieved context. This paper proposes SynCheck, a lightweight monitor that leverages fine-grained decoding dynamics including sequence likelihood, uncertainty quantification, context influence, and semantic alignment to synchronously detect unfaithful sentences. By integrating efficiently measurable and complementary signals, SynCheck enables accurate and immediate feedback and intervention, achieving 0.85 AUROC in detecting faithfulness errors across six long-form retrieval-augmented generation tasks, improving prior best method by 4%. Leveraging SynCheck, we further introduce FOD, a faithfulness-oriented decoding algorithm guided by beam search for long-form retrieval-augmented generation. Empirical results demonstrate that FOD outperforms traditional strategies such as abstention, reranking, or contrastive decoding significantly in terms of faithfulness, achieving over 10% improvement across six datasets.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-19T16:42:57Z</published>
+    <arxiv:comment>EMNLP 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Di Wu</name>
+    </author>
+    <author>
+      <name>Jia-Chen Gu</name>
+    </author>
+    <author>
+      <name>Fan Yin</name>
+    </author>
+    <author>
+      <name>Nanyun Peng</name>
+    </author>
+    <author>
+      <name>Kai-Wei Chang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.01852v1</id>
+    <title>Evaluating Chunking Strategies for Retrieval-Augmented Generation on Academic Texts</title>
+    <updated>2026-07-02T08:12:35Z</updated>
+    <link href="https://arxiv.org/abs/2607.01852v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.01852v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrieval-Augmented Generation (RAG) systems use the question-answering capabilities of Large Language Models (LLMs) to access information outside their parameters. We evaluate if cluster-based semantic chunking improves retrieval and answer quality compared to fixed-size and recursive chunking evaluating on long, structured academic theses using the Retrieval Augmented Generation Assessment (RAGAs) framework. RAGAs based faithfulness shows limited reliability in this setup. Performance on fixed versus document specific questions varied substantially, likely related to the formatting of documents and preprocessing. Under the tested configuration, cluster-based chunking did not outperform simpler strategies.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-02T08:12:35Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Valentin J. J. Kreileder</name>
+    </author>
+    <author>
+      <name>Johannes Reisinger</name>
+    </author>
+    <author>
+      <name>Andreas Fischer</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.04026v1</id>
+    <title>Patient-Centered RAG for Oncology Visit Aid Following the Ottawa Decision Guide</title>
+    <updated>2025-07-05T12:37:26Z</updated>
+    <link href="https://arxiv.org/abs/2507.04026v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.04026v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Effective communication is essential in cancer care, yet patients often face challenges in preparing for complex medical visits. We present an interactive, Retrieval-augmented Generation-assisted system that helps patients progress from uninformed to visit-ready. Our system adapts the Ottawa Personal Decision Guide into a dynamic retrieval-augmented generation workflow, helping users bridge knowledge gaps, clarify personal values and generate useful questions for their upcoming visits. Focusing on localized prostate cancer, we conduct a user study with patients and a clinical expert. Results show high system usability (UMUX Mean = 6.0 out of 7), strong relevance of generated content (Mean = 6.7 out of 7), minimal need for edits, and high clinical faithfulness (Mean = 6.82 out of 7). This work demonstrates the potential of combining patient-centered design with language models to enhance clinical preparation in oncology care.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-05T12:37:26Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Siyang Liu</name>
+    </author>
+    <author>
+      <name>Lawrence Chin-I An</name>
+    </author>
+    <author>
+      <name>Rada Mihalcea</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.15280v1</id>
+    <title>Context-DPO: Aligning Language Models for Context-Faithfulness</title>
+    <updated>2024-12-18T04:08:18Z</updated>
+    <link href="https://arxiv.org/abs/2412.15280v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.15280v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reliable responses from large language models (LLMs) require adherence to user instructions and retrieved information. While alignment techniques help LLMs align with human intentions and values, improving context-faithfulness through alignment remains underexplored. To address this, we propose $\textbf{Context-DPO}$, the first alignment method specifically designed to enhance LLMs' context-faithfulness. We introduce $\textbf{ConFiQA}$, a benchmark that simulates Retrieval-Augmented Generation (RAG) scenarios with knowledge conflicts to evaluate context-faithfulness. By leveraging faithful and stubborn responses to questions with provided context from ConFiQA, our Context-DPO aligns LLMs through direct preference optimization. Extensive experiments demonstrate that our Context-DPO significantly improves context-faithfulness, achieving 35% to 280% improvements on popular open-source models. Further analysis demonstrates that Context-DPO preserves LLMs' generative capabilities while providing interpretable insights into context utilization. Our code and data are released at https://github.com/byronBBL/Context-DPO</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-18T04:08:18Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Baolong Bi</name>
+    </author>
+    <author>
+      <name>Shaohan Huang</name>
+    </author>
+    <author>
+      <name>Yiwei Wang</name>
+    </author>
+    <author>
+      <name>Tianchi Yang</name>
+    </author>
+    <author>
+      <name>Zihan Zhang</name>
+    </author>
+    <author>
+      <name>Haizhen Huang</name>
+    </author>
+    <author>
+      <name>Lingrui Mei</name>
+    </author>
+    <author>
+      <name>Junfeng Fang</name>
+    </author>
+    <author>
+      <name>Zehao Li</name>
+    </author>
+    <author>
+      <name>Furu Wei</name>
+    </author>
+    <author>
+      <name>Weiwei Deng</name>
+    </author>
+    <author>
+      <name>Feng Sun</name>
+    </author>
+    <author>
+      <name>Qi Zhang</name>
+    </author>
+    <author>
+      <name>Shenghua Liu</name>
+    </author>
+  </entry>
+</feed>
